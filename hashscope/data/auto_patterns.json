@@ -577,6 +577,22 @@
   ]
  },
  {
+  "regex": "^YnM6WYERjJfhxwepT7zV6odWoEUz1X4esYQb4bQ3KZ7bbZAyOTc1MDM3OTc1NjMyODA0ECcAAD3vFoc<W+>$",
+  "example": "YnM6WYERjJfhxwepT7zV6odWoEUz1X4esYQb4bQ3KZ7bbZAyOTc1MDM3OTc1NjMyODA0ECcAAD3vFoc=",
+  "modes": [
+   {
+    "name": "Blockchain, My Wallet, Second Password (SHA256)",
+    "hashcat": 18800,
+    "john": null
+   },
+   {
+    "name": "Blockchain, My Wallet, Second Password (SHA256)",
+    "hashcat": 40040,
+    "john": null
+   }
+  ]
+ },
+ {
   "regex": "^\\$ab\\$5\\*\\d+\\*\\d+\\*[0-9a-fA-F]+\\*[0-9a-fA-F]+\\*[0-9a-fA-F]+\\*[0-9a-fA-F]+$",
   "example": "$ab$5*0*10000*b8900e4885ff9cad8f01ee1957a43bd633fea12491440514ae27aa83f2f5c006ec7e7fa0bce040add619919b4eb60608304b7d571a2ed87fd58c9ad6bc5fcf4c*7d254d93e16be9312fb1ccbfc6265c40cb0c5eab7b605a95a116e2383fb1cf12b688223f96221dcd2bf5410d4ca6f90e0789ee00157fa91658b42665d6b6844c*fc9f6be604d1c59ac32664ec2c5b9b30*00c4972149af3adcc235899e9d20611ea6e8de2212afcb9fcfefde7e35b691c2d0994eb47e4f9a260526ba47f4caea71af9c7fadcd5685d50126276f6acdd59966528b13ccc26036a0eaba2f2451aa64b05766d0edd03c988dcf87e2a9eec52d",
   "modes": [
@@ -592,7 +608,7 @@
   "example": "$krb5pa$17$hashcat$HASHCATDOMAIN.COM$a17776abe5383236c58582f515843e029ecbff43706d177651b7b6cdb2713b17597ddb35b1c9c470c281589fd1d51cca125414d19e40e333",
   "modes": [
    {
-    "name": "Kerberos 5, etype 17, AS-REQ Pre-Auth",
+    "name": "Kerberos 5, etype 17, Pre-Auth",
     "hashcat": 19800,
     "john": null
    }
@@ -603,7 +619,7 @@
   "example": "$krb5pa$18$hashcat$HASHCATDOMAIN.COM$96c289009b05181bfd32062962740b1b1ce5f74eb12e0266cde74e81094661addab08c0c1a178882c91a0ed89ae4e0e68d2820b9cce69770",
   "modes": [
    {
-    "name": "Kerberos 5, etype 18, AS-REQ Pre-Auth",
+    "name": "Kerberos 5, etype 18, Pre-Auth",
     "hashcat": 19900,
     "john": null
    }
@@ -855,6 +871,22 @@
   ]
  },
  {
+  "regex": "^\\$xmpp\\-scram\\$0\\$\\d+\\$\\d+\\$\\d+\\$[0-9a-fA-F]{40}$",
+  "example": "$xmpp-scram$0$4096$45$353835323736323530353932363531393630313632353634313335323434323038393931323138373138343134$6d5b543b985dc6c0645da3c83d114fce121aa51d",
+  "modes": [
+   {
+    "name": "XMPP SCRAM PBKDF2-SHA1",
+    "hashcat": 23200,
+    "john": null
+   },
+   {
+    "name": "XMPP SCRAM PBKDF2-SHA1",
+    "hashcat": 40052,
+    "john": null
+   }
+  ]
+ },
+ {
   "regex": "^\\$iwork\\$2\\$\\d+\\$\\d+\\$\\d+\\$[0-9a-fA-F]+\\$[0-9a-fA-F]+\\$[0-9a-fA-F]{128}$",
   "example": "$iwork$2$1$1$4000$b31b7320d1e7a5ee$01f54d6f9e5090eb16fef2b05f8242bc$69561c985268326b7353fb22c3685a378341127557bd2bbea1bd10afb31f2127344707b662a2c29480c32b8b93dea0538327f604e5aa8733be83af25f370f7ac",
   "modes": [
@@ -937,6 +969,22 @@
    {
     "name": "MongoDB ServerKey SCRAM-SHA-1",
     "hashcat": 24100,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^\\$mongodb\\-scram\\$\\*1\\*dXNlcg=<W+>\\*\\d+\\*<W+>\\*[A-Za-z0-9./+=_-]{44}$",
+  "example": "$mongodb-scram$*1*dXNlcg==*15000*qYaA1K1ZZSSpWfY+yqShlcTn0XVcrNipxiYCLQ==*QWVry9aTS/JW+y5CWCBr8lcEH9Kr/D4je60ncooPer8=",
+  "modes": [
+   {
+    "name": "MongoDB ServerKey SCRAM-SHA-256",
+    "hashcat": 24200,
+    "john": null
+   },
+   {
+    "name": "MongoDB ServerKey SCRAM-SHA-256",
+    "hashcat": 40053,
     "john": null
    }
   ]
@@ -1194,7 +1242,7 @@
  },
  {
   "regex": "^\\$SNMPv3\\$5\\$\\d+\\$[0-9a-fA-F]+\\$[0-9a-fA-F]+\\$[0-9a-fA-F]{64}$",
-  "example": "$SNMPv3$5$45889431$3081a70201033011020455c0c85c020300ffe30401010201030450304e041180001f88808106d566db57fd600000000002011002020118040e6d61747269785f5348412d333834042000000000000000000000000000000000000000000000000000000000000000000400303d041180001f88808106d566db57fd60000000000400a226020411b3c3590201000201003018301606082b06010201010200060a2b06010401bf0803020a$80001f88808106d566db57fd6000000000$89424907553231aaa27055f4b3b0a97c626ed4cdc4b660d903765b607af792a5",
+  "example": "$SNMPv3$5$45889431$3081a70201033011020455c0c85c020300ffe30401010201030450304e041180001f88808106d566db57fd600000000002011002020118040e6d61747269785f5348412d333834042000000000000000000000000000000000000000000000000000000000000000000400303d041180001f88808106d566db57fd60000000000400a226020411b3c3590201000201003018301606082b06010201010200060a2b06010401bf0803020a$80001f88808106d566db57fd60$89424907553231aaa27055f4b3b0a97c626ed4cdc4b660d903765b607af792a5",
   "modes": [
    {
     "name": "SNMPv3 HMAC-SHA384-256",
@@ -1843,6 +1891,171 @@
   ]
  },
  {
+  "regex": "^\\$sspr\\$0\\$\\d+\\$<W+>\\$[0-9a-fA-F]{32}$",
+  "example": "$sspr$0$100000$NONE$2c8586ef492e3c3dd3795395507dc14f",
+  "modes": [
+   {
+    "name": "NetIQ SSPR (MD5)",
+    "hashcat": 32000,
+    "john": null
+   },
+   {
+    "name": "NetIQ SSPR (MD5)",
+    "hashcat": 40057,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^\\$sspr\\$1\\$\\d+\\$<W+>\\$[0-9a-fA-F]{40}$",
+  "example": "$sspr$1$100000$NONE$b3485214dfa55b038a606a183a560dab7db4ecf1",
+  "modes": [
+   {
+    "name": "NetIQ SSPR (SHA1)",
+    "hashcat": 32010,
+    "john": null
+   },
+   {
+    "name": "NetIQ SSPR (SHA1)",
+    "hashcat": 40058,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^\\$sspr\\$2\\$\\d+\\$<W+>\\$[0-9a-fA-F]{40}$",
+  "example": "$sspr$2$100000$CxCpGqosk9PkCBcoRFp6DLjjRhVEJKK8$a33283d71c2ecaf4f3017b0a89feca2fc879221c",
+  "modes": [
+   {
+    "name": "NetIQ SSPR (SHA-1 with Salt)",
+    "hashcat": 32020,
+    "john": null
+   },
+   {
+    "name": "NetIQ SSPR (SHA-1 with Salt)",
+    "hashcat": 40059,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^\\$sspr\\$3\\$\\d+\\$<W+>\\$[0-9a-fA-F]{64}$",
+  "example": "$sspr$3$100000$ODk2NDA5Mjc2NDIwMjMwMjQyMTQ1NzMz$7195873d47c7e3627510862e37fe7cab9bc83b91feecb9864841bf80cff92419",
+  "modes": [
+   {
+    "name": "NetIQ SSPR (SHA-256 with Salt)",
+    "hashcat": 32030,
+    "john": null
+   },
+   {
+    "name": "NetIQ SSPR (SHA-256 with Salt)",
+    "hashcat": 40060,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^\\$sspr\\$3\\$\\d+\\$[0-9a-fA-F]+\\$[0-9a-fA-F]{64}$",
+  "example": "$sspr$3$1000$f9bbf1381f481427$a1b45fd7eb190cc7f0bf831698cb777207eebbb4b7ea2abd6fff84be539aae62",
+  "modes": [
+   {
+    "name": "Adobe AEM (SSPR, SHA-256 with Salt)",
+    "hashcat": 32031,
+    "john": null
+   },
+   {
+    "name": "Adobe AEM (SSPR, SHA-256 with Salt)",
+    "hashcat": 40061,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^\\$sspr\\$4\\$\\d+\\$<W+>\\$[0-9a-fA-F]{128}$",
+  "example": "$sspr$4$100000$NzYwNjMyNDc2MTQ2OTE4NTUzODAyODE3$0ce2e8b8efa4280e6e003d77cb45d45300dff3960c5c073f68303565fe62fe4ff3ada8cee7d3b87d0457335ab0df73c5c64ee1f71ccf6b8bd43a316ecb42ecd4",
+  "modes": [
+   {
+    "name": "NetIQ SSPR (SHA-512 with Salt)",
+    "hashcat": 32040,
+    "john": null
+   },
+   {
+    "name": "NetIQ SSPR (SHA-512 with Salt)",
+    "hashcat": 40062,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^\\$sspr\\$4\\$\\d+\\$[0-9a-fA-F]+\\$[0-9a-fA-F]{128}$",
+  "example": "$sspr$4$1000$9ad596c50a5c9acd$d4cdc3c7d227e3cc57a9c9014b1eff1684808ef40191482cd8ae6e9d7b66211a5f04e4b34f494b0513a5f67b9614c5ff16e95e624a60f41b16b90533f305146e",
+  "modes": [
+   {
+    "name": "Adobe AEM (SSPR, SHA-512 with Salt)",
+    "hashcat": 32041,
+    "john": null
+   },
+   {
+    "name": "Adobe AEM (SSPR, SHA-512 with Salt)",
+    "hashcat": 40063,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^\\$pbkdf2\\-hmac\\-sha1\\$\\d+\\$\\d+\\$[0-9a-fA-F]{40}$",
+  "example": "$pbkdf2-hmac-sha1$100000$7134180503252384106490944216249411431665011151428170747164626720$990e0c5f62b1384d48cbe3660329b9741c4a8473",
+  "modes": [
+   {
+    "name": "NetIQ SSPR (PBKDF2WithHmacSHA1)",
+    "hashcat": 32050,
+    "john": null
+   },
+   {
+    "name": "NetIQ SSPR (PBKDF2WithHmacSHA1)",
+    "hashcat": 40064,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^\\$pbkdf2\\-sha256\\$\\d+\\$<W+>\\$[A-Za-z0-9./+=_-]{43}$",
+  "example": "$pbkdf2-sha256$100000$MDUzMTE4NjQyNDc5NTQxMjAwMjg1OTYxNjAxNDgzNzc$bwYpAyQ2g5PqdnMj8mJ46mkwQbyztw8gEQqnhDHj48c",
+  "modes": [
+   {
+    "name": "NetIQ SSPR (PBKDF2WithHmacSHA256)",
+    "hashcat": 32060,
+    "john": null
+   },
+   {
+    "name": "Python passlib pbkdf2-sha256",
+    "hashcat": 40043,
+    "john": null
+   },
+   {
+    "name": "NetIQ SSPR (PBKDF2WithHmacSHA256)",
+    "hashcat": 40065,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^\\$pbkdf2\\-hmac\\-sha512\\$<W+>$",
+  "example": "$pbkdf2-hmac-sha512$100000.0211258841559010919749469547425215185689838310218571790549787198.1659e40e64daf84d635a5f1ed2f5708f6735233bed471994bdc0307b3c5f77597f79bdcdd088d1e79357b383809ddfd84379006b49e14f4ff45c449071478777",
+  "modes": [
+   {
+    "name": "NetIQ SSPR (PBKDF2WithHmacSHA512)",
+    "hashcat": 32070,
+    "john": null
+   },
+   {
+    "name": "NetIQ SSPR (PBKDF2WithHmacSHA512)",
+    "hashcat": 40066,
+    "john": null
+   }
+  ]
+ },
+ {
   "regex": "^\\$krb5asrep\\$17\\$<W+>\\$<W+>\\$[0-9a-fA-F]+\\$[0-9a-fA-F]+$",
   "example": "$krb5asrep$17$user$EXAMPLE.COM$a419c4030e555734b06c2629$c09a1421f96eb126c757a4b87830381f142477d9a85b2beb3093dbfd44f38ddb6016a479537fb7b36e046315869fe79187217971ff6a12c1e0a2df3f68045e03814b21f756d8981f781803d65e8572823c88979581d93cf7d768f2efced16f3719b8d1004d9e73d798de255383476bced47d1982f16be77d0feb55a1f44f58bd013fa4caee58ac614caf0f1cf9101ec9623c5b8c2a1491b73f134f074790088fdb360b5ebce0d32a8145ed00a81ddf77188e150b92d8e8ddd0285d27f1514253e5546e6bba864b362bb1e6483b26d08fa4cc268bfbefe0f690039bcc524b774599df3680c1c3431d891bfa99514a877f964e",
   "modes": [
@@ -1957,7 +2170,7 @@
   "example": "$keepass$*4*2*ef636ddf*67108864*19*2*e4e48422ecb07da38401597150a7326fdd1519007b28c306c6e7418fb8ed29cb*af527945ec56bbb37f84ef85093735b689139f46c8003f82cad269837eb69d5f*03d9a29a67fb4bb500000400021000000031c1f2e6bf714350be5805216afc5aff0304000000010000000420000000e4e48422ecb07da38401597150a7326fdd1519007b28c306c6e7418fb8ed29cb0b8b00000000014205000000245555494410000000ef636ddf8c29444b91f7a9a403e30a0c040100000056040000001300000005010000004908000000020000000000000005010000004d080000000000000400000000040100000050040000000200000042010000005320000000af527945ec56bbb37f84ef85093735b689139f46c8003f82cad269837eb69d5f000710000000257fccc1e57ecdea03bbc06aab7cd13200040000000d0a0d0a*63249b86a7539e2bbdbf0ac7f196d460e781e221d1c580d4c718dcc1493eefa9",
   "modes": [
    {
-    "name": "KeePass Argon2 (KDBX v4)",
+    "name": "KeePass (KDBX v4)",
     "hashcat": 34300,
     "john": null
    },
@@ -2688,39 +2901,12 @@
   ]
  },
  {
-  "regex": "^YnM6WYERjJfhxwepT7zV6odWoEUz1X4esYQb4bQ3KZ7bbZAyOTc1MDM3OTc1NjMyODA0ECcAAD3vFoc<W+>$",
-  "example": "YnM6WYERjJfhxwepT7zV6odWoEUz1X4esYQb4bQ3KZ7bbZAyOTc1MDM3OTc1NjMyODA0ECcAAD3vFoc=",
-  "modes": [
-   {
-    "name": "Blockchain, My Wallet, Second Password (SHA256)",
-    "hashcat": 40040,
-    "john": null
-   }
-  ]
- },
- {
   "regex": "^\\$pbkdf2\\-sha512\\$\\d+\\$<W+>\\$[A-Za-z0-9./+=_-]{86}$",
   "example": "$pbkdf2-sha512$25000$LyWE0HrP2RsjZCxlDGFMKQ$1vC5Ohk2mCS9b6akqsEfgeb4l74SF8XjH.SljXf3dMLHdlY1GK9ojcCKts6/asR4aPqBmk74nCDddU3tvSCJvw",
   "modes": [
    {
     "name": "Python passlib pbkdf2-sha512",
     "hashcat": 40042,
-    "john": null
-   }
-  ]
- },
- {
-  "regex": "^\\$pbkdf2\\-sha256\\$\\d+\\$<W+>\\$[A-Za-z0-9./+=_-]{43}$",
-  "example": "$pbkdf2-sha256$29000$x9h7j/Ge8x6DMEao1VqrdQ$kra3R1wEnY8mPdDWOpTqOTINaAmZvRMcYd8u5OBQP9A",
-  "modes": [
-   {
-    "name": "Python passlib pbkdf2-sha256",
-    "hashcat": 40043,
-    "john": null
-   },
-   {
-    "name": "NetIQ SSPR (PBKDF2WithHmacSHA256)",
-    "hashcat": 40065,
     "john": null
    }
   ]
@@ -2748,133 +2934,12 @@
   ]
  },
  {
-  "regex": "^\\$xmpp\\-scram\\$0\\$\\d+\\$\\d+\\$\\d+\\$[0-9a-fA-F]{40}$",
-  "example": "$xmpp-scram$0$4096$45$353835323736323530353932363531393630313632353634313335323434323038393931323138373138343134$6d5b543b985dc6c0645da3c83d114fce121aa51d",
-  "modes": [
-   {
-    "name": "XMPP SCRAM PBKDF2-SHA1",
-    "hashcat": 40052,
-    "john": null
-   }
-  ]
- },
- {
-  "regex": "^\\$mongodb\\-scram\\$\\*1\\*dXNlcg=<W+>\\*\\d+\\*<W+>\\*[A-Za-z0-9./+=_-]{44}$",
-  "example": "$mongodb-scram$*1*dXNlcg==*15000*qYaA1K1ZZSSpWfY+yqShlcTn0XVcrNipxiYCLQ==*QWVry9aTS/JW+y5CWCBr8lcEH9Kr/D4je60ncooPer8=",
-  "modes": [
-   {
-    "name": "MongoDB ServerKey SCRAM-SHA-256",
-    "hashcat": 40053,
-    "john": null
-   }
-  ]
- },
- {
   "regex": "^SCRAM\\-SHA\\-256\\$\\d+:<W+>\\$$",
   "example": "SCRAM-SHA-256$4096:IKfxzJ8Nq4PkLJCfgKcPmA==$",
   "modes": [
    {
     "name": "PostgreSQL SCRAM-SHA-256",
     "hashcat": 40055,
-    "john": null
-   }
-  ]
- },
- {
-  "regex": "^\\$sspr\\$0\\$\\d+\\$<W+>\\$[0-9a-fA-F]{32}$",
-  "example": "$sspr$0$100000$NONE$2c8586ef492e3c3dd3795395507dc14f",
-  "modes": [
-   {
-    "name": "NetIQ SSPR (MD5)",
-    "hashcat": 40057,
-    "john": null
-   }
-  ]
- },
- {
-  "regex": "^\\$sspr\\$1\\$\\d+\\$<W+>\\$[0-9a-fA-F]{40}$",
-  "example": "$sspr$1$100000$NONE$b3485214dfa55b038a606a183a560dab7db4ecf1",
-  "modes": [
-   {
-    "name": "NetIQ SSPR (SHA1)",
-    "hashcat": 40058,
-    "john": null
-   }
-  ]
- },
- {
-  "regex": "^\\$sspr\\$2\\$\\d+\\$<W+>\\$[0-9a-fA-F]{40}$",
-  "example": "$sspr$2$100000$CxCpGqosk9PkCBcoRFp6DLjjRhVEJKK8$a33283d71c2ecaf4f3017b0a89feca2fc879221c",
-  "modes": [
-   {
-    "name": "NetIQ SSPR (SHA-1 with Salt)",
-    "hashcat": 40059,
-    "john": null
-   }
-  ]
- },
- {
-  "regex": "^\\$sspr\\$3\\$\\d+\\$<W+>\\$[0-9a-fA-F]{64}$",
-  "example": "$sspr$3$100000$ODk2NDA5Mjc2NDIwMjMwMjQyMTQ1NzMz$7195873d47c7e3627510862e37fe7cab9bc83b91feecb9864841bf80cff92419",
-  "modes": [
-   {
-    "name": "NetIQ SSPR (SHA-256 with Salt)",
-    "hashcat": 40060,
-    "john": null
-   }
-  ]
- },
- {
-  "regex": "^\\$sspr\\$3\\$\\d+\\$[0-9a-fA-F]+\\$[0-9a-fA-F]{64}$",
-  "example": "$sspr$3$1000$f9bbf1381f481427$a1b45fd7eb190cc7f0bf831698cb777207eebbb4b7ea2abd6fff84be539aae62",
-  "modes": [
-   {
-    "name": "Adobe AEM (SSPR, SHA-256 with Salt)",
-    "hashcat": 40061,
-    "john": null
-   }
-  ]
- },
- {
-  "regex": "^\\$sspr\\$4\\$\\d+\\$<W+>\\$[0-9a-fA-F]{128}$",
-  "example": "$sspr$4$100000$NzYwNjMyNDc2MTQ2OTE4NTUzODAyODE3$0ce2e8b8efa4280e6e003d77cb45d45300dff3960c5c073f68303565fe62fe4ff3ada8cee7d3b87d0457335ab0df73c5c64ee1f71ccf6b8bd43a316ecb42ecd4",
-  "modes": [
-   {
-    "name": "NetIQ SSPR (SHA-512 with Salt)",
-    "hashcat": 40062,
-    "john": null
-   }
-  ]
- },
- {
-  "regex": "^\\$sspr\\$4\\$\\d+\\$[0-9a-fA-F]+\\$[0-9a-fA-F]{128}$",
-  "example": "$sspr$4$1000$9ad596c50a5c9acd$d4cdc3c7d227e3cc57a9c9014b1eff1684808ef40191482cd8ae6e9d7b66211a5f04e4b34f494b0513a5f67b9614c5ff16e95e624a60f41b16b90533f305146e",
-  "modes": [
-   {
-    "name": "Adobe AEM (SSPR, SHA-512 with Salt)",
-    "hashcat": 40063,
-    "john": null
-   }
-  ]
- },
- {
-  "regex": "^\\$pbkdf2\\-hmac\\-sha1\\$\\d+\\$\\d+\\$[0-9a-fA-F]{40}$",
-  "example": "$pbkdf2-hmac-sha1$100000$7134180503252384106490944216249411431665011151428170747164626720$990e0c5f62b1384d48cbe3660329b9741c4a8473",
-  "modes": [
-   {
-    "name": "NetIQ SSPR (PBKDF2WithHmacSHA1)",
-    "hashcat": 40064,
-    "john": null
-   }
-  ]
- },
- {
-  "regex": "^\\$pbkdf2\\-hmac\\-sha512\\$<W+>$",
-  "example": "$pbkdf2-hmac-sha512$100000.0211258841559010919749469547425215185689838310218571790549787198.1659e40e64daf84d635a5f1ed2f5708f6735233bed471994bdc0307b3c5f77597f79bdcdd088d1e79357b383809ddfd84379006b49e14f4ff45c449071478777",
-  "modes": [
-   {
-    "name": "NetIQ SSPR (PBKDF2WithHmacSHA512)",
-    "hashcat": 40066,
     "john": null
    }
   ]
@@ -3012,6 +3077,16 @@
     "john": null
    },
    {
+    "name": "md5($salt.sha1($salt.$pass))",
+    "hashcat": 21300,
+    "john": null
+   },
+   {
+    "name": "Simpla CMS - md5($salt.$pass.md5($pass))",
+    "hashcat": 22800,
+    "john": null
+   },
+   {
     "name": "AES-128-ECB NOKDF (PT = $salt, key = $pass)",
     "hashcat": 26401,
     "john": null
@@ -3034,6 +3109,11 @@
    {
     "name": "Domain Cached Credentials (DCC), MS Cache (NT)",
     "hashcat": 31500,
+    "john": null
+   },
+   {
+    "name": "md5($salt.md5($pass).$salt)",
+    "hashcat": 33100,
     "john": null
    },
    {
@@ -3164,6 +3244,11 @@
    },
    {
     "name": "sha1(md5(md5($pass)))",
+    "hashcat": 18500,
+    "john": null
+   },
+   {
+    "name": "sha1(md5(md5($pass)))",
     "hashcat": 40039,
     "john": null
    },
@@ -3195,6 +3280,33 @@
    {
     "name": "HAS-160",
     "hashcat": 40165,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{56}(?::[^\\s:]+){1}$",
+  "extended": true,
+  "example": "0cf361904f4b0234cf4ade8496d8c11c04e5982db967603e82f22b2f:89452466460220844541730694146873525188525677",
+  "modes": [
+   {
+    "name": "sha224($pass.$salt)",
+    "hashcat": 1310,
+    "john": null
+   },
+   {
+    "name": "sha224($salt.$pass)",
+    "hashcat": 1320,
+    "john": null
+   },
+   {
+    "name": "sha224($pass.$salt)",
+    "hashcat": 40009,
+    "john": null
+   },
+   {
+    "name": "sha224($salt.$pass)",
+    "hashcat": 40010,
     "john": null
    }
   ]
@@ -3354,6 +3466,11 @@
    {
     "name": "sha512(utf16le($pass))",
     "hashcat": 1770,
+    "john": null
+   },
+   {
+    "name": "Cisco-ISE Hashed Password (SHA256)",
+    "hashcat": 5720,
     "john": null
    },
    {
@@ -3583,6 +3700,16 @@
     "john": null
    },
    {
+    "name": "HMAC-RIPEMD160 (key = $pass)",
+    "hashcat": 6050,
+    "john": null
+   },
+   {
+    "name": "HMAC-RIPEMD160 (key = $salt)",
+    "hashcat": 6060,
+    "john": null
+   },
+   {
     "name": "PeopleSoft PS_TOKEN",
     "hashcat": 13500,
     "john": null
@@ -3620,6 +3747,23 @@
    {
     "name": "HMAC-RIPEMD160 (key = $salt)",
     "hashcat": 40014,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{720}$",
+  "extended": true,
+  "example": "50575333e4e2a590a5e5c8269f57ec04a8a1c0c03da55b311c51236dab8c6b96b0afca02000800005eaeee20c6cc10d5caa6522b3ca545c41d9133d630ca08f467b7aae8a2bbef51aa2df968d10b9c4cfb17a182c0add7acb8c153794f51337e12f472f451d10e6dcac664ed760606aabdbb6b794a80d6ce2a330100c76de0ff961a45cca21576b893d826c52f272b97cdf48aca6fbe6c74b039f81c61b7d632fb6fddd9f96162ab1effd69a4598a331e855e38792e5365272d4791bf991d248e1585a9ad20ea3d77b5d2ef9a711ef90a70ec6991cb578f1b8bdaa9efa7b0039e9ea96f777491713047bdd99fa1d78f06f23406a66046b387d3034e46b1f84129bba853cc18fa49f107dc0290547258d30566a4b1b363ff4c1c16cb2f5f400059833d4b651bfa508200cbdc7a75fc57ef90eb1d90b0deea8505753332d454f46505753332d454f466236710e2e2477878e738b60d0aa2834a96b01e97764fe980243a06ad16939d1",
+  "modes": [
+   {
+    "name": "Password Safe v3",
+    "hashcat": 5200,
+    "john": null
+   },
+   {
+    "name": "Password Safe v3",
+    "hashcat": 40011,
     "john": null
    }
   ]
@@ -3979,8 +4123,18 @@
  {
   "regex": "^[0-9a-fA-F]{64}(?::[^\\s:]+){1}$",
   "extended": true,
-  "example": "3f3473a071b1fb955544e80c81853ca0f1e4f9ee4ca3bf4d2a8a10b5ef5be1f6:6058321484538505215534207835727413038041028036676832416353152201",
+  "example": "0f71c7c82700c9094ca95eee3d804cc283b538bec49428a9ef8da7b34effb3ba:08151337",
   "modes": [
+   {
+    "name": "HMAC-Streebog-256 (key = $pass), big-endian",
+    "hashcat": 11750,
+    "john": null
+   },
+   {
+    "name": "HMAC-Streebog-256 (key = $salt), big-endian",
+    "hashcat": 11760,
+    "john": null
+   },
    {
     "name": "ColdFusion 10+",
     "hashcat": 12600,
@@ -4002,8 +4156,28 @@
     "john": null
    },
    {
+    "name": "sha256($salt.sha256($pass))",
+    "hashcat": 20720,
+    "john": null
+   },
+   {
+    "name": "sha256(sha256($pass.$salt))",
+    "hashcat": 20730,
+    "john": null
+   },
+   {
+    "name": "sha256($salt.sha256_bin($pass))",
+    "hashcat": 21420,
+    "john": null
+   },
+   {
     "name": "sha256($salt.$pass.$salt)",
     "hashcat": 22300,
+    "john": null
+   },
+   {
+    "name": "HMAC-BLAKE2S (key = $pass)",
+    "hashcat": 33300,
     "john": null
    },
    {
@@ -4044,30 +4218,38 @@
   ]
  },
  {
-  "regex": "^[0-9a-fA-F]{160}$",
+  "regex": "^[0-9a-fA-F]{128}(?::[^\\s:]+){1}$",
   "extended": true,
-  "example": "15738301074686823451275227041071157383010746868234512752270410712bc4be900bf96ccf43c9852fff49b5f5874a9f6e7bf301686fa6d98286de151f15738301074686823451275227041071",
+  "example": "be4555415af4a05078dcf260bb3c0a35948135df3dbf93f7c8b80574ceb0d71ea4312127f839b7707bf39ccc932d9e7cb799671183455889e8dde3738dfab5b6:08151337",
   "modes": [
    {
-    "name": "Android FDE (Samsung DEK)",
-    "hashcat": 12900,
+    "name": "HMAC-Streebog-512 (key = $pass), big-endian",
+    "hashcat": 11850,
     "john": null
    },
    {
-    "name": "Oracle T: Type (Oracle 12+)",
-    "hashcat": 40036,
+    "name": "HMAC-Streebog-512 (key = $salt), big-endian",
+    "hashcat": 11860,
     "john": null
-   }
-  ]
- },
- {
-  "regex": "^[0-9a-fA-F]{128}(?::[^\\s:]+){1}$",
-  "extended": true,
-  "example": "bfa9fe5a404faff8b0d200385e26b783a163e475869336029d3ebaccaf02b5f16e4949279e8a33b942ab647f8f19a83dbe89a6d39dd6d8f84812de7d2e556767:6422386434050716105781561510557063652302782465168686858312232148",
-  "modes": [
+   },
    {
     "name": "FileZilla Server >= 0.9.55",
     "hashcat": 15000,
+    "john": null
+   },
+   {
+    "name": "sha512(sha512($pass).$salt)",
+    "hashcat": 32410,
+    "john": null
+   },
+   {
+    "name": "sha512(sha512_bin($pass).$salt)",
+    "hashcat": 32420,
+    "john": null
+   },
+   {
+    "name": "CubeCart (whirlpool($salt.$pass.$salt))",
+    "hashcat": 32600,
     "john": null
    },
    {
@@ -4093,6 +4275,28 @@
    {
     "name": "CubeCart (whirlpool($salt.$pass.$salt))",
     "hashcat": 40069,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{160}$",
+  "extended": true,
+  "example": "8F75FBD166AFDB6D7587DAB89C2F15672AAC031C5B0B5E65C0835FB130555F6FF4E0E5764976755558112246FFF306450C22F6B7746B9E9831ED97B373992F9157436180438417080374881414745255",
+  "modes": [
+   {
+    "name": "Oracle T: Type (Oracle 12+)",
+    "hashcat": 12300,
+    "john": null
+   },
+   {
+    "name": "Android FDE (Samsung DEK)",
+    "hashcat": 12900,
+    "john": null
+   },
+   {
+    "name": "Oracle T: Type (Oracle 12+)",
+    "hashcat": 40036,
     "john": null
    }
   ]
@@ -4156,6 +4360,16 @@
    {
     "name": "DANE RFC7929/RFC8162 SHA2-256",
     "hashcat": 30420,
+    "john": null
+   },
+   {
+    "name": "sha224(sha224($pass))",
+    "hashcat": 34400,
+    "john": null
+   },
+   {
+    "name": "sha224(sha1($pass))",
+    "hashcat": 34500,
     "john": null
    },
    {
@@ -4263,63 +4477,20 @@
   ]
  },
  {
-  "regex": "^[0-9a-fA-F]{16}$",
-  "extended": true,
-  "example": "73f8142b4326d36a",
-  "modes": [
-   {
-    "name": "MurmurHash64A (zero seed)",
-    "hashcat": 34201,
-    "john": null
-   }
-  ]
- },
- {
-  "regex": "^[0-9a-fA-F]{128}(?::[^\\s:]+){8}$",
-  "extended": true,
-  "example": "101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f:808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebf:0011223344556677:8899aabbccddeeff:404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f70717273:01000000c0000201:a0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebf:c0c1c2c3c4c5c6c7c8c9cacbcccdcecf:8673eea20ce3f1b51bd45531bfb62f83079717d6a3afb4543b8d6ad378eae10d",
-  "modes": [
-   {
-    "name": "IKE-PSK SHA256",
-    "hashcat": 38100,
-    "john": null
-   }
-  ]
- },
- {
-  "regex": "^[0-9a-fA-F]{56}(?::[^\\s:]+){1}$",
-  "extended": true,
-  "example": "0cf361904f4b0234cf4ade8496d8c11c04e5982db967603e82f22b2f:89452466460220844541730694146873525188525677",
-  "modes": [
-   {
-    "name": "sha224($pass.$salt)",
-    "hashcat": 40009,
-    "john": null
-   },
-   {
-    "name": "sha224($salt.$pass)",
-    "hashcat": 40010,
-    "john": null
-   }
-  ]
- },
- {
-  "regex": "^[0-9a-fA-F]{720}$",
-  "extended": true,
-  "example": "50575333e4e2a590a5e5c8269f57ec04a8a1c0c03da55b311c51236dab8c6b96b0afca02000800005eaeee20c6cc10d5caa6522b3ca545c41d9133d630ca08f467b7aae8a2bbef51aa2df968d10b9c4cfb17a182c0add7acb8c153794f51337e12f472f451d10e6dcac664ed760606aabdbb6b794a80d6ce2a330100c76de0ff961a45cca21576b893d826c52f272b97cdf48aca6fbe6c74b039f81c61b7d632fb6fddd9f96162ab1effd69a4598a331e855e38792e5365272d4791bf991d248e1585a9ad20ea3d77b5d2ef9a711ef90a70ec6991cb578f1b8bdaa9efa7b0039e9ea96f777491713047bdd99fa1d78f06f23406a66046b387d3034e46b1f84129bba853cc18fa49f107dc0290547258d30566a4b1b363ff4c1c16cb2f5f400059833d4b651bfa508200cbdc7a75fc57ef90eb1d90b0deea8505753332d454f46505753332d454f466236710e2e2477878e738b60d0aa2834a96b01e97764fe980243a06ad16939d1",
-  "modes": [
-   {
-    "name": "Password Safe v3",
-    "hashcat": 40011,
-    "john": null
-   }
-  ]
- },
- {
   "regex": "^[0-9a-fA-F]{80}(?::[^\\s:]+){1}$",
   "extended": true,
   "example": "e740440e7bd65056a90f1aa4eb00e00308a9f1788866b4eacbd46cfc8032301d4e5b3a9d179be044:95454599772294521162217",
   "modes": [
+   {
+    "name": "HMAC-RIPEMD320 (key = $pass)",
+    "hashcat": 33650,
+    "john": null
+   },
+   {
+    "name": "HMAC-RIPEMD320 (key = $salt)",
+    "hashcat": 33660,
+    "john": null
+   },
    {
     "name": "HMAC-RIPEMD320 (key = $pass)",
     "hashcat": 40073,
@@ -4339,7 +4510,36 @@
   "modes": [
    {
     "name": "Citrix NetScaler (PBKDF2-HMAC-SHA256)",
+    "hashcat": 33900,
+    "john": null
+   },
+   {
+    "name": "Citrix NetScaler (PBKDF2-HMAC-SHA256)",
     "hashcat": 40075,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{16}$",
+  "extended": true,
+  "example": "73f8142b4326d36a",
+  "modes": [
+   {
+    "name": "MurmurHash64A (zero seed)",
+    "hashcat": 34201,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{128}(?::[^\\s:]+){8}$",
+  "extended": true,
+  "example": "101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f:808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebf:0011223344556677:8899aabbccddeeff:404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f70717273:01000000c0000201:a0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebf:c0c1c2c3c4c5c6c7c8c9cacbcccdcecf:8673eea20ce3f1b51bd45531bfb62f83079717d6a3afb4543b8d6ad378eae10d",
+  "modes": [
+   {
+    "name": "IKE-PSK SHA256",
+    "hashcat": 38100,
     "john": null
    }
   ]
