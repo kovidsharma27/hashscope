@@ -81,3 +81,24 @@ def test_ranking_can_be_disabled():
 ])
 def test_junk_is_not_a_hash(junk):
     assert list(engine.identifyHash(junk)) == []
+
+
+# Real example hashes copied from a Kali hashcat run (tools/check_against_hashcat.py)
+# that HashScope missed before v0.2.1. Where only a prefix was visible, the tail is filler
+# of the correct alphabet/length, so these protect the pattern SHAPE, not a cracked value.
+KALI_GAPS = [
+    (15100, "$sha1$20000$75552156$HhYMDdaEHiK3eMIzTldOFPnw.s2Q"),
+    (12400, "_GW..8841inaTltazRsQ"),
+    (28600, "SCRAM-SHA-256$4096:IKfxzJ8Nq4PkLJCfgKcPmA==$iRw3qwTp18uaBnsT0AbcdEfgHijklMnopQrs=:ZZk3qwTp18uaBnsT0AbcdEfgHijklMnopQrs="),
+    (20300, "$pbkdf2-sha256$29000$x9h7j/Ge8x6DMEao1VqrdQ$kra3R1wEnY8mPdDWaaaaaaaaaaaaaaaaaaaaaaaaaaaa"[:len("$pbkdf2-sha256$29000$x9h7j/Ge8x6DMEao1VqrdQ$") + 43]),
+    (19000, "@m@75f6f129f9c9e77b6b1b78f791ed764a@8741857532330050"),
+    (12000, "sha1:1000:MTYwNTM4MDU4Mzc4MzA=:aGghFQBtQ8+WVlMk5GEaMw=="),
+    (12100, "sha512:1000:NzY2:DNWohLbdIWIt4Npk9gpTvA=="),
+    (11900, "md5:1000:NjAxMDY4MQ==:a00DtIW9hP9voC85fmEA5uVhgdDx67nSPSm9yA=="),
+    (20600, "otm_sha256:1000:1234567890:S5Q9Kc0ETY6ZPyQUJYY60oFjaJuZZaSiabcdefg="),
+]
+
+
+@pytest.mark.parametrize("mode,h", KALI_GAPS)
+def test_kali_gap_now_identified(mode, h):
+    assert mode in [m.hashcat for m in engine.identifyHash(h)]

@@ -83,7 +83,7 @@ statement about everyday CTF hashes, where all tools do well.
 ## Testing
 
 ```bash
-pytest                                  # ~1080 tests: 777 pass, 303 expected-fail (known gaps)
+pytest                                  # ~1090 tests: ~785 pass, ~300 expected-fail (known gaps)
 python3 tools/compare_with_nth.py       # accuracy table above
 ```
 
@@ -96,7 +96,8 @@ generated from itself, so treat it as a regression guard, not proof of accuracy.
 | When | Run |
 |---|---|
 | new hashcat release | `git clone --depth 1 https://github.com/hashcat/hashcat /tmp/hashcat`, then `python3 tools/sync_hashcat_examples.py /tmp/hashcat` and `python3 tools/generate_hashcat_patterns.py` |
-| see what YOUR hashcat supports that HashScope doesn't | `python3 tools/check_against_hashcat.py` |
+| see what YOUR hashcat supports that HashScope doesn't | `python3 tools/check_against_hashcat.py` (uses full-length `--machine-readable` output) |
+| add YOUR hashcat's examples (e.g. on Kali) to the database | `python3 tools/sync_hashcat_examples.py --installed` then `python3 tools/generate_hashcat_patterns.py` then `pytest` |
 | validate John names against YOUR john | `python3 tools/check_john_formats.py` |
 | after fixing a gap | remove its mode from `tests/known_gaps.json` |
 

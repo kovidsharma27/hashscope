@@ -350,11 +350,6 @@
   "hash": "$6$72820166$U4DVzpcYxgw7MVVDGGvB2/H5lRistD5.Ah4upwENR5UtffLR4X4SxSzfREv8z6wVl0jRFX40/KnYVvK4829kD1"
  },
  {
-  "mode": 2000,
-  "name": "STDOUT",
-  "hash": "hashcat"
- },
- {
   "mode": 2100,
   "name": "Domain Cached Credentials 2 (DCC2), MS Cache 2",
   "hash": "$DCC2$10240#6848#e2829c8af2232fa53797e2f0e35e4626"
@@ -3788,10 +3783,5 @@
   "mode": 79000,
   "name": "bcrypt $2*$, Blowfish (Unix) [Bridged: FPGA fleet sim]",
   "hash": "$2a$05$MBCzKhG1KhezLh.0LRa0Kuw12nLJtpHy6DIaU.JAnqJUDYspHC.Ou"
- },
- {
-  "mode": 99999,
-  "name": "Plaintext",
-  "hash": "hashcat"
  }
 ]

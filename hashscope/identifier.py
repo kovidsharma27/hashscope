@@ -587,6 +587,51 @@ curated_prototypes = [
         HashInfo(name='LDAP {SSHA256} (salted SHA-256, base64)', hashcat=1411, john=None, extended=False)]),
     Prototype(regex=re.compile(r'^\{SSHA512\}[A-Za-z0-9+/]{86,}={0,2}$'), modes=[
         HashInfo(name='LDAP {SSHA512} (salted SHA-512, base64)', hashcat=1711, john=None, extended=False)]),
+    # ---- gaps found by running tools/check_against_hashcat.py on Kali -------------------
+    Prototype(regex=re.compile(r'^\{PKCS5S2\}[A-Za-z0-9+/=]{60,}$'), modes=[
+        HashInfo(name='Atlassian (PBKDF2-HMAC-SHA1)', hashcat=12001, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^\{PBKDF2_SHA256\}[A-Za-z0-9+/=]{40,}$'), modes=[
+        HashInfo(name='RedHat 389-DS LDAP (PBKDF2-HMAC-SHA256)', hashcat=10901, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^\$sha1\$\d+\$[./A-Za-z0-9]+\$[./A-Za-z0-9]{28}$'), modes=[
+        HashInfo(name='Juniper/NetBSD sha1crypt', hashcat=15100, john='sha1crypt', extended=False)]),
+    Prototype(regex=re.compile(r'^\$shiro1\$SHA-512\$\d+\$[A-Za-z0-9+/=]+\$[A-Za-z0-9+/=]+$'), modes=[
+        HashInfo(name='Apache Shiro 1 SHA-512', hashcat=12150, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^_[./0-9A-Za-z]{19}$'), modes=[
+        HashInfo(name='BSDi Crypt, Extended DES', hashcat=12400, john='bsdicrypt', extended=False)]),
+    Prototype(regex=re.compile(r'^SCRAM-SHA-256\$\d+:[A-Za-z0-9+/=]+\$[A-Za-z0-9+/=]+:[A-Za-z0-9+/=]+$'), modes=[
+        HashInfo(name='PostgreSQL SCRAM-SHA-256', hashcat=28600, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^\$ml\$\d+\$[a-f0-9]{64}\$[a-f0-9]{128}$', re.IGNORECASE), modes=[
+        HashInfo(name='macOS v10.8+ (PBKDF2-SHA512)', hashcat=7100, john='pbkdf2-hmac-sha512', extended=False)]),
+    Prototype(regex=re.compile(r'^\$pbkdf2-sha512\$\d+\$[A-Za-z0-9./+]+\$[A-Za-z0-9./+]{86}$'), modes=[
+        HashInfo(name='Python passlib pbkdf2-sha512', hashcat=20200, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^\$pbkdf2-sha256\$\d+\$[A-Za-z0-9./+]+\$[A-Za-z0-9./+]{43}$'), modes=[
+        HashInfo(name='Python passlib pbkdf2-sha256', hashcat=20300, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^\$pbkdf2\$\d+\$[A-Za-z0-9./+]+\$[A-Za-z0-9./+]{27}$'), modes=[
+        HashInfo(name='Python passlib pbkdf2-sha1', hashcat=20400, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^@m@[a-f0-9]{32}@[^@\s]+$', re.IGNORECASE), modes=[
+        HashInfo(name='QNX /etc/shadow (MD5)', hashcat=19000, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^@s@[a-f0-9]{64}@[^@\s]+$', re.IGNORECASE), modes=[
+        HashInfo(name='QNX /etc/shadow (SHA256)', hashcat=19100, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^@S@[a-f0-9]{128}@[^@\s]+$', re.IGNORECASE), modes=[
+        HashInfo(name='QNX /etc/shadow (SHA512)', hashcat=19200, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^v1;PPH1_MD4,\d+,\d+,[a-f0-9]{64}$', re.IGNORECASE), modes=[
+        HashInfo(name='MS-AzureSync PBKDF2-HMAC-SHA256', hashcat=12800, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^otm_sha256:\d+:[^:\s]+:[A-Za-z0-9+/=]+$'), modes=[
+        HashInfo(name='Oracle Transportation Management (SHA256)', hashcat=20600, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^pbkdf2\(\d+,\d+,sha(1|256|512)\)\$[^$\s]+\$[a-f0-9]+$', re.IGNORECASE), modes=[
+        HashInfo(name='Web2py pbkdf2-sha512', hashcat=21600, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^PBKDF1:sha1:\d+:[A-Za-z0-9+/=]+:[A-Za-z0-9+/=]+$'), modes=[
+        HashInfo(name='PBKDF1-SHA1', hashcat=32900, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^md5:\d+:[A-Za-z0-9+/=]+:[A-Za-z0-9+/=]+$'), modes=[
+        HashInfo(name='PBKDF2-HMAC-MD5', hashcat=11900, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^sha1:\d+:[A-Za-z0-9+/=]+:[A-Za-z0-9+/=]+$'), modes=[
+        HashInfo(name='PBKDF2-HMAC-SHA1', hashcat=12000, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^sha512:\d+:[A-Za-z0-9+/=]+:[A-Za-z0-9+/=]+$'), modes=[
+        HashInfo(name='PBKDF2-HMAC-SHA512', hashcat=12100, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^S:"Config Passphrase"=\d+:[a-f0-9]+$', re.IGNORECASE), modes=[
+        HashInfo(name='SecureCRT MasterPassphrase v2', hashcat=31400, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^\{x-isSHA512, \d+\}[A-Za-z0-9+/=]+$'), modes=[
+        HashInfo(name='SAP CODVN H (PWDSALTEDHASH) isSHA512', hashcat=35000, john=None, extended=False)]),
 ]
 
 base_prototypes = modern_prototypes + newer_prototypes + legacy_prototypes + curated_prototypes
