@@ -40,7 +40,7 @@ WIDE = "<W+>"
 WIDE_OPT = "<W*>"
 
 PREFIX_RE = re.compile(
-    r"^(\$[A-Za-z0-9_\-]+\$|\{[A-Za-z0-9_\-]+\}|[A-Za-z][A-Za-z0-9_\-]{2,}(?=[$:*#]))"
+    r"^(\$[A-Za-z0-9_\-]+\$|\{[A-Za-z0-9_\-]+\}|[A-Za-z][A-Za-z0-9_\-]{2,}(?=[$:*#=]))"
 )
 HEX_DIGEST_LENS = {16, 32, 40, 48, 56, 64, 96, 128}
 B64_DIGEST_LENS = {22, 27, 31, 43, 44, 53, 64, 86, 88}
@@ -126,7 +126,7 @@ def main():
     # These are CANDIDATES only, so they are flagged extended (shown with `hashscope -e`).
     families = {}
     for ex in skipped_nomarker:
-        m = re.fullmatch(r"([0-9a-fA-F]{8,512})((?::[^\s:]+)*)", ex["hash"])
+        m = re.fullmatch(r"([0-9a-fA-F]{8,8192})((?::[^\s:]+)*)", ex["hash"])
         if not m:
             continue
         n, k = len(m.group(1)), m.group(2).count(":")

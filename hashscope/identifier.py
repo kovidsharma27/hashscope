@@ -587,6 +587,53 @@ curated_prototypes = [
         HashInfo(name='LDAP {SSHA256} (salted SHA-256, base64)', hashcat=1411, john=None, extended=False)]),
     Prototype(regex=re.compile(r'^\{SSHA512\}[A-Za-z0-9+/]{86,}={0,2}$'), modes=[
         HashInfo(name='LDAP {SSHA512} (salted SHA-512, base64)', hashcat=1711, john=None, extended=False)]),
+
+    # ---- round 3 (Kali hashcat 7.1.2): the last gaps that have a recognisable shape ------
+    Prototype(regex=re.compile(r'^[^:\s]*::[^:\s]*:[a-f0-9]{16}:[a-f0-9]{32}:[a-f0-9]+$', re.IGNORECASE), modes=[
+        HashInfo(name='NetNTLMv2 (NT)', hashcat=27100, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^[^:\s]*::[^:\s]*:[a-f0-9]{48}:[a-f0-9]{48}:[a-f0-9]{16}$', re.IGNORECASE), modes=[
+        HashInfo(name='NetNTLMv1 / NetNTLMv1+ESS (NT)', hashcat=27000, john=None, extended=False)]),
+    # Bitcoin addresses (hashcat can attack them via the private key: WIF / raw key modes)
+    Prototype(regex=re.compile(r'^1[1-9A-HJ-NP-Za-km-z]{25,34}$'), modes=[
+        HashInfo(name='Bitcoin address P2PKH (private-key attack: WIF compressed)', hashcat=28501, john=None, extended=False),
+        HashInfo(name='Bitcoin address P2PKH (private-key attack: WIF uncompressed)', hashcat=28502, john=None, extended=False),
+        HashInfo(name='Bitcoin address P2PKH (private-key attack: raw key compressed)', hashcat=30901, john=None, extended=False),
+        HashInfo(name='Bitcoin address P2PKH (private-key attack: raw key uncompressed)', hashcat=30902, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^3[1-9A-HJ-NP-Za-km-z]{25,34}$'), modes=[
+        HashInfo(name='Bitcoin address P2SH(P2WPKH) (private-key attack: WIF compressed)', hashcat=28505, john=None, extended=False),
+        HashInfo(name='Bitcoin address P2SH(P2WPKH) (private-key attack: WIF uncompressed)', hashcat=28506, john=None, extended=False),
+        HashInfo(name='Bitcoin address P2SH(P2WPKH) (private-key attack: raw key compressed)', hashcat=30905, john=None, extended=False),
+        HashInfo(name='Bitcoin address P2SH(P2WPKH) (private-key attack: raw key uncompressed)', hashcat=30906, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^bc1[qp][02-9ac-hj-np-z]{38,58}$'), modes=[
+        HashInfo(name='Bitcoin address Bech32 (private-key attack: WIF compressed)', hashcat=28503, john=None, extended=False),
+        HashInfo(name='Bitcoin address Bech32 (private-key attack: WIF uncompressed)', hashcat=28504, john=None, extended=False),
+        HashInfo(name='Bitcoin address Bech32 (private-key attack: raw key compressed)', hashcat=30903, john=None, extended=False),
+        HashInfo(name='Bitcoin address Bech32 (private-key attack: raw key uncompressed)', hashcat=30904, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]{20,}$'), modes=[
+        HashInfo(name='Flask Session Cookie ($salt.$salt.$pass)', hashcat=29100, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^\d{6,8}:\d+(:\d+){3,}$'), modes=[
+        HashInfo(name='TOTP (HMAC-SHA1)', hashcat=18100, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^@S@[A-Za-z0-9./+=]{20,}@[^@\s]+$'), modes=[
+        HashInfo(name='QNX 7 /etc/shadow (SHA512)', hashcat=19210, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^SH2[A-Za-z0-9+/]{40,}={0,2}$'), modes=[
+        HashInfo(name='FortiGate256 (FortiOS256)', hashcat=26300, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^P![A-Za-z0-9_-]{40,}$'), modes=[
+        HashInfo(name='mega.nz password-protected link (PBKDF2-HMAC-SHA512)', hashcat=33400, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^[A-Za-z0-9+/]{27}=$'), modes=[
+        HashInfo(name='Umbraco HMAC-SHA1', hashcat=24800, john=None, extended=False)]),
+    # short, shapeless formats: candidates only (shown with `hashscope -e`)
+    Prototype(regex=re.compile(r'^[A-Za-z0-9]{8}$'), modes=[
+        HashInfo(name='Dahua Authentication MD5', hashcat=24900, john='dahua', extended=True),
+        HashInfo(name='Besder Authentication MD5', hashcat=24901, john=None, extended=True)]),
+    Prototype(regex=re.compile(r'^[a-f0-9]{8}$', re.IGNORECASE), modes=[
+        HashInfo(name='Java Object hashCode()', hashcat=18700, john=None, extended=True),
+        HashInfo(name='MurmurHash64A truncated (zero seed)', hashcat=34211, john=None, extended=True)]),
+    Prototype(regex=re.compile(r'^[A-Za-z0-9./]{10}$'), modes=[
+        HashInfo(name='Tripcode', hashcat=16000, john=None, extended=True)]),
+    Prototype(regex=re.compile(r'^[a-f0-9]{10}$', re.IGNORECASE), modes=[
+        HashInfo(name='Stuffit5', hashcat=24700, john=None, extended=True)]),
+    Prototype(regex=re.compile(r'^[A-Za-z0-9./]{16}$'), modes=[
+        HashInfo(name='OpenEdge Progress Encode', hashcat=26200, john=None, extended=True)]),
     # ---- gaps found by running tools/check_against_hashcat.py on Kali (round 2) ----------
     Prototype(regex=re.compile(r'^48435058[a-f0-9]{100,}$', re.IGNORECASE), modes=[
         HashInfo(name='WPA-EAPOL (hashcat .hccapx file, hex-encoded)', hashcat=2500, john=None, extended=False),
@@ -732,7 +779,9 @@ POPULARITY_BY_NAME = {
     'scrypt (crypt-style)': 80, "PHPass' Portable Hash": 92, 'Wordpress \u2265 v2.6.2': 93,
     'Joomla \u2265 v2.5.18': 85, 'Drupal > v7.x': 88, 'PostgreSQL MD5': 80, 'MSSQL(2012)': 75,
     'MSSQL(2005)': 70, 'Cisco Type 8': 80, 'Cisco Type 9': 80, 'Django(PBKDF2-HMAC-SHA256)': 88,
-    'MySQL4.1/MySQL5 (without leading *)': 60, 'SHA3-256': 45, 'SHA3-512': 45, 'SHA3-384': 40,
+    'MySQL4.1/MySQL5 (without leading *)': 60, 'NetNTLMv2 (NT)': 60, 'NetNTLMv1 / NetNTLMv1+ESS (NT)': 60,
+    'Flask Session Cookie ($salt.$salt.$pass)': 40, 'TOTP (HMAC-SHA1)': 50, 'Umbraco HMAC-SHA1': 25,
+    'CryptoCurrency(Adress)': 80, 'SHA3-256': 45, 'SHA3-512': 45, 'SHA3-384': 40,
     'SHA3-224': 35, 'Keccak-256 (Ethereum addresses/hashes)': 45, 'Keccak-512': 35, 'Keccak-384': 30,
     'Keccak-224': 30, 'BLAKE2b-512': 45, 'BLAKE2s-256': 30, 'LM (single 8-byte half)': 40,
     'Blowfish(OpenBSD)': 90, 'Woltlab Burning Board 4.x': 30, 'Whirlpool': 45, 'Double MD5': 45, 'Double SHA-1': 45, 'RIPEMD-160': 45,

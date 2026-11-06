@@ -403,6 +403,17 @@
   ]
  },
  {
+  "regex": "^mojolicious<W+>$",
+  "example": "mojolicious=eyJiYXIiOiJhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmNhYmMiLCJleHBpcmVzIjoxNzU1MDIxNjM4LCJmb29vIjoxfVpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlo---078935cd386250a467f9d7bfe379d6f0175679545460660c3ca090eb4c69ddbf",
+  "modes": [
+   {
+    "name": "Perl Mojolicious session cookie (HMAC-SHA256, >= v9.19)",
+    "hashcat": 16501,
+    "john": null
+   }
+  ]
+ },
+ {
   "regex": "^\\$electrum\\$1\\*\\d+\\*[0-9a-fA-F]{32}$",
   "example": "$electrum$1*44358283104603165383613672586868*c43a6632d9f59364f74c395a03d8c2ea",
   "modes": [
@@ -2677,6 +2688,17 @@
   ]
  },
  {
+  "regex": "^YnM6WYERjJfhxwepT7zV6odWoEUz1X4esYQb4bQ3KZ7bbZAyOTc1MDM3OTc1NjMyODA0ECcAAD3vFoc<W+>$",
+  "example": "YnM6WYERjJfhxwepT7zV6odWoEUz1X4esYQb4bQ3KZ7bbZAyOTc1MDM3OTc1NjMyODA0ECcAAD3vFoc=",
+  "modes": [
+   {
+    "name": "Blockchain, My Wallet, Second Password (SHA256)",
+    "hashcat": 40040,
+    "john": null
+   }
+  ]
+ },
+ {
   "regex": "^\\$pbkdf2\\-sha512\\$\\d+\\$<W+>\\$[A-Za-z0-9./+=_-]{86}$",
   "example": "$pbkdf2-sha512$25000$LyWE0HrP2RsjZCxlDGFMKQ$1vC5Ohk2mCS9b6akqsEfgeb4l74SF8XjH.SljXf3dMLHdlY1GK9ojcCKts6/asR4aPqBmk74nCDddU3tvSCJvw",
   "modes": [
@@ -2875,6 +2897,17 @@
    {
     "name": "phpass(md5($pass))",
     "hashcat": 40079,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^gAAAAABpVS3xV437a0DY_zbCoSrtML\\-DrLC6xSi\\-9CLArB06FXVZNbNmnp\\-4EfrJ6RplpoNb3VEhyHnDLdYjbtVpfvuqw42KoZ1KKsUoor\\-\\-DAXjjBOR0TY<W+>$",
+  "example": "gAAAAABpVS3xV437a0DY_zbCoSrtML-DrLC6xSi-9CLArB06FXVZNbNmnp-4EfrJ6RplpoNb3VEhyHnDLdYjbtVpfvuqw42KoZ1KKsUoor--DAXjjBOR0TY=",
+  "modes": [
+   {
+    "name": "Fernet (key = SHA256($pass))",
+    "hashcat": 40083,
     "john": null
    }
   ]
@@ -3592,6 +3625,193 @@
   ]
  },
  {
+  "regex": "^[0-9a-fA-F]{1024}$",
+  "extended": true,
+  "example": "87914967f14737a67fb460f27b8aeb81de2b41bf2740b3dd78784e02763951daa47c7ca235e75c22ec8d959d6b67f7eedefad61e6a0d038079d3721a8e7215e415671e8c7b3dbed6453a114e6db89a52be9a9c1698a9c698f1e37f80d7afaf0efba82b6e5f5df32bd289b95343c6775e2c7f025ef1d8bfae84042a92546e15b635b5fade3aef6ee52a7a5ab018d33ea98bc115dfc62af606187fbab8cbda6e8417402c722ca8c2b07e6ca6a33bf94b2ce2a819a9f8cfaa5af70e3af6e5350d3a306f036f13ff5ba97d5728d5f6413b482c74f528211ae77b6c169215c5487d5a3ce23736b16996b86c71b12d120df28ef322f5143d9a258d0ae7aaa8c193a6dcb5bf18e3c57b5474d24b843f8dd4e83a74109396ddb4f0c50d3657a7eacc8828568e51202de48cd2dfe5acbe3d8840ade1ce44b716d5c0008f2b21b9981353cb12b8af2592a5ab744ae83623349f551acf371c81f86d17a8422654989f078179b2386e2aa8375853a1802cd8bc5d41ce45795f78b80e69fcfa3d14cf9127c3a33fa2dc76ad73960fb7bce15dd489e0b6eca7beed3733887cd5e6f3939a015d4d449185060b2f3bbad46e46d417b8f0830e91edd5ebc17cd5a99316792a36afd83fa1edc55da25518c8e7ff61e201976fa2c5fc9969e05cbee0dce7a0ef876b7340bbe8937c9d9c8248f0e0eae705fe7e1d2da48902f4f3e27d2cf532b7021e18",
+  "modes": [
+   {
+    "name": "TrueCrypt RIPEMD160 + XTS 512 bit (legacy)",
+    "hashcat": 6211,
+    "john": null
+   },
+   {
+    "name": "TrueCrypt RIPEMD160 + XTS 1024 bit (legacy)",
+    "hashcat": 6212,
+    "john": null
+   },
+   {
+    "name": "TrueCrypt RIPEMD160 + XTS 1536 bit (legacy)",
+    "hashcat": 6213,
+    "john": null
+   },
+   {
+    "name": "TrueCrypt SHA512 + XTS 512 bit (legacy)",
+    "hashcat": 6221,
+    "john": null
+   },
+   {
+    "name": "TrueCrypt SHA512 + XTS 1024 bit (legacy)",
+    "hashcat": 6222,
+    "john": null
+   },
+   {
+    "name": "TrueCrypt SHA512 + XTS 1536 bit (legacy)",
+    "hashcat": 6223,
+    "john": null
+   },
+   {
+    "name": "TrueCrypt Whirlpool + XTS 512 bit (legacy)",
+    "hashcat": 6231,
+    "john": null
+   },
+   {
+    "name": "TrueCrypt Whirlpool + XTS 1024 bit (legacy)",
+    "hashcat": 6232,
+    "john": null
+   },
+   {
+    "name": "TrueCrypt Whirlpool + XTS 1536 bit (legacy)",
+    "hashcat": 6233,
+    "john": null
+   },
+   {
+    "name": "TrueCrypt RIPEMD160 + XTS 512 bit + boot-mode (legacy)",
+    "hashcat": 6241,
+    "john": null
+   },
+   {
+    "name": "TrueCrypt RIPEMD160 + XTS 1024 bit + boot-mode (legacy)",
+    "hashcat": 6242,
+    "john": null
+   },
+   {
+    "name": "TrueCrypt RIPEMD160 + XTS 1536 bit + boot-mode (legacy)",
+    "hashcat": 6243,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt RIPEMD160 + XTS 512 bit (legacy)",
+    "hashcat": 13711,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt RIPEMD160 + XTS 1024 bit (legacy)",
+    "hashcat": 13712,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt RIPEMD160 + XTS 1536 bit (legacy)",
+    "hashcat": 13713,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt SHA512 + XTS 512 bit (legacy)",
+    "hashcat": 13721,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt SHA512 + XTS 1024 bit (legacy)",
+    "hashcat": 13722,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt SHA512 + XTS 1536 bit (legacy)",
+    "hashcat": 13723,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt Whirlpool + XTS 512 bit (legacy)",
+    "hashcat": 13731,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt Whirlpool + XTS 1024 bit (legacy)",
+    "hashcat": 13732,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt Whirlpool + XTS 1536 bit (legacy)",
+    "hashcat": 13733,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt RIPEMD160 + XTS 512 bit + boot-mode (legacy)",
+    "hashcat": 13741,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt RIPEMD160 + XTS 1024 bit + boot-mode (legacy)",
+    "hashcat": 13742,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt RIPEMD160 + XTS 1536 bit + boot-mode (legacy)",
+    "hashcat": 13743,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt SHA256 + XTS 512 bit (legacy)",
+    "hashcat": 13751,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt SHA256 + XTS 1024 bit (legacy)",
+    "hashcat": 13752,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt SHA256 + XTS 1536 bit (legacy)",
+    "hashcat": 13753,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt SHA256 + XTS 512 bit + boot-mode (legacy)",
+    "hashcat": 13761,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt SHA256 + XTS 1024 bit + boot-mode (legacy)",
+    "hashcat": 13762,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt SHA256 + XTS 1536 bit + boot-mode (legacy)",
+    "hashcat": 13763,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt Streebog-512 + XTS 512 bit (legacy)",
+    "hashcat": 13771,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt Streebog-512 + XTS 1024 bit (legacy)",
+    "hashcat": 13772,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt Streebog-512 + XTS 1536 bit (legacy)",
+    "hashcat": 13773,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt Streebog-512 + XTS 512 bit + boot-mode (legacy)",
+    "hashcat": 13781,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt Streebog-512 + XTS 1024 bit + boot-mode (legacy)",
+    "hashcat": 13782,
+    "john": null
+   },
+   {
+    "name": "VeraCrypt Streebog-512 + XTS 1536 bit + boot-mode (legacy)",
+    "hashcat": 13783,
+    "john": null
+   }
+  ]
+ },
+ {
   "regex": "^[0-9a-fA-F]{316}(?::[^\\s:]+){1}$",
   "extended": true,
   "example": "3437343735333336383831353232323433383333303236303337333338363232303135383237333638363532373231343030313131333838323734373138363632343133333335353030353633373533333133313530363533303738343334313330303630343633333237373037383537333630303233303830303437323838333237313438363238343434383831363634323431333430383735323038:f4b376e25868751fc0264f573ff1fe50b65ce5a2",
@@ -4079,6 +4299,18 @@
    {
     "name": "sha224($salt.$pass)",
     "hashcat": 40010,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{720}$",
+  "extended": true,
+  "example": "50575333e4e2a590a5e5c8269f57ec04a8a1c0c03da55b311c51236dab8c6b96b0afca02000800005eaeee20c6cc10d5caa6522b3ca545c41d9133d630ca08f467b7aae8a2bbef51aa2df968d10b9c4cfb17a182c0add7acb8c153794f51337e12f472f451d10e6dcac664ed760606aabdbb6b794a80d6ce2a330100c76de0ff961a45cca21576b893d826c52f272b97cdf48aca6fbe6c74b039f81c61b7d632fb6fddd9f96162ab1effd69a4598a331e855e38792e5365272d4791bf991d248e1585a9ad20ea3d77b5d2ef9a711ef90a70ec6991cb578f1b8bdaa9efa7b0039e9ea96f777491713047bdd99fa1d78f06f23406a66046b387d3034e46b1f84129bba853cc18fa49f107dc0290547258d30566a4b1b363ff4c1c16cb2f5f400059833d4b651bfa508200cbdc7a75fc57ef90eb1d90b0deea8505753332d454f46505753332d454f466236710e2e2477878e738b60d0aa2834a96b01e97764fe980243a06ad16939d1",
+  "modes": [
+   {
+    "name": "Password Safe v3",
+    "hashcat": 40011,
     "john": null
    }
   ]

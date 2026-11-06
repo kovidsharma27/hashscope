@@ -102,3 +102,35 @@ KALI_GAPS = [
 @pytest.mark.parametrize("mode,h", KALI_GAPS)
 def test_kali_gap_now_identified(mode, h):
     assert mode in [m.hashcat for m in engine.identifyHash(h)]
+
+
+# Round 3: real strings copied from the Kali hashcat 7.1.2 example list. NetNTLM samples keep
+# the real header and use filler of the right alphabet/length for the truncated tail.
+KALI_ROUND3 = [
+    (28501, "1Jv6EonXm9x4Dw4QjEPAhGfmzFxTL7b3Zj"),
+    (28505, "3H1YvmSdrjEfj9LvtiKJ8XiYq5htJRuejA"),
+    (28503, "bc1qxd76a5zamfyw0g2d2rxkdh0zt9m0uzmxmwjf0q"),
+    (30901, "14Fqy5AGRehazZ4NLzxFWy2E4BiNFdH9Ut"),
+    (18100, "597056:3600:613004:1234567890:322664:9876543210"),
+    (24800, "8uigXlGMNI7BzwLCJlDbcKR2FP4="),
+    (26300, "SH2lpcpFXM5QRlWYwY5vL9+5svfYyb+c79qENpxEoB3NtZpVxKwHjuq/9TH88U="),
+    (29100, "eyJ1c2VybmFtZSI6ImFkbWluIn0.YjdgRQ.1OTlf1PD0H9wXsu_qS0aywAJVD8"),
+    (27000, "::5V4T:ada06359242920a500000000000000000000000000000000:0556d5297b5daa4e8bb9ea1bd3b4a10be4a44fbc2a5b6d41:2fd0e7ee1f0e3c0a"),
+    (27100, "0UL5G37JOI0SX::6VB1IS0KA74:ebe1afa18b7fbfa6:aab8bf8675658dd2a939458a10b8e9b5:0101000000000000abcdef0123456789"),
+]
+
+
+@pytest.mark.parametrize("mode,h", KALI_ROUND3)
+def test_kali_round3_identified(mode, h):
+    assert mode in [m.hashcat for m in engine.identifyHash(h)]
+
+
+def test_extended_candidates_hidden_by_default(capsys):
+    from hashscope.identifier import writeResult
+    import io
+    out = io.StringIO()
+    writeResult(HashID().identifyHash("29937c08"), out, hashcatMode=True, extended=False)
+    assert "Java Object" not in out.getvalue()
+    out2 = io.StringIO()
+    writeResult(HashID().identifyHash("29937c08"), out2, hashcatMode=True, extended=True)
+    assert "Java Object" in out2.getvalue()

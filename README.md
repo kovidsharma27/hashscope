@@ -62,10 +62,10 @@ for info in HashID().identifyHash("$argon2id$v=19$m=65536,t=3,p=4$c29tZXNhbHQ$Rd
 | | any | top 5 | top 1 |
 |---|---|---|---|
 | HashScope v0.1 (before) | 17% | 11% | 9% |
-| **HashScope v0.2.2** (default output) | **57%** | **50%** | **36%** |
+| **HashScope v0.2.4** (default output) | **59%** | **~50%** | **~36%** |
 | Name-That-Hash | 22% | 16% | 12% |
 
-`hashscope -e` additionally lists *candidate* families for bare `hex:salt` formats (shape-based guesses, e.g. every `sha1($pass.$salt)` variant). Counting those, coverage is 89% - but that number is inflated, because listing 30 candidates makes "any" easy; trust the default-output row.
+`hashscope -e` additionally lists *candidate* families for bare `hex:salt` formats (shape-based guesses, e.g. every `sha1($pass.$salt)` variant). Counting those, coverage is 97% - but that number is inflated, because listing 30 candidates makes "any" easy; trust the default-output row.
 
 **Caveat:** the auto-patterns were derived from these same examples, so 60% is partly
 circular. The honest independent check is `tools/heldout_john_check.py`, which uses John the
@@ -101,6 +101,6 @@ generated from itself, so treat it as a regression guard, not proof of accuracy.
 | see what YOUR hashcat supports that HashScope doesn't | `python3 tools/check_against_hashcat.py` (uses full-length `--machine-readable` output) |
 | add YOUR hashcat's examples (e.g. on Kali) to the database | `python3 tools/sync_hashcat_examples.py --installed` then `python3 tools/generate_hashcat_patterns.py` then `pytest` |
 | validate John names against YOUR john | `python3 tools/check_john_formats.py` |
-| after fixing a gap | remove its mode from `tests/known_gaps.json` |
+| after syncing/generating | `python3 tools/update_known_gaps.py`, then `pytest` |
 
 License: GPL-3.0-or-later (derived from hashid). See `NOTICE.md`.
