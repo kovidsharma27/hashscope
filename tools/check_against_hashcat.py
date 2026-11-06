@@ -26,14 +26,18 @@ def main():
     except (OSError, ValueError, Exception) as exc:  # noqa: BLE001
         sys.exit("Could not read hashcat examples (%s).\nTry: hashcat --example-hashes --machine-readable > ex.json" % exc)
     engine = HashID()
-    ok, missing = 0, []
+    ok, strict_ok, missing = 0, 0, []
     for ex in examples:
-        if ex["mode"] in {x.hashcat for x in engine.identifyHash(ex["hash"])}:
+        found = list(engine.identifyHash(ex["hash"]))
+        if ex["mode"] in {x.hashcat for x in found}:
             ok += 1
+            if any(x.hashcat == ex["mode"] and not x.extended for x in found):
+                strict_ok += 1
         else:
             missing.append(ex)
     total = ok + len(missing)
-    print("HashScope identifies %d of %d hashcat modes (%d%%)" % (ok, total, 100 * ok // max(total, 1)))
+    print("Identified (default output):          %d of %d hashcat modes (%d%%)" % (strict_ok, total, 100 * strict_ok // max(total, 1)))
+    print("Identified incl. `-e` candidates:     %d of %d hashcat modes (%d%%)" % (ok, total, 100 * ok // max(total, 1)))
     if truncated:
         print("NOTE: %d examples were truncated in the text output and skipped. "
               "Use --machine-readable for a full check." % truncated)

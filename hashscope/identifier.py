@@ -587,7 +587,21 @@ curated_prototypes = [
         HashInfo(name='LDAP {SSHA256} (salted SHA-256, base64)', hashcat=1411, john=None, extended=False)]),
     Prototype(regex=re.compile(r'^\{SSHA512\}[A-Za-z0-9+/]{86,}={0,2}$'), modes=[
         HashInfo(name='LDAP {SSHA512} (salted SHA-512, base64)', hashcat=1711, john=None, extended=False)]),
-    # ---- gaps found by running tools/check_against_hashcat.py on Kali -------------------
+    # ---- gaps found by running tools/check_against_hashcat.py on Kali (round 2) ----------
+    Prototype(regex=re.compile(r'^48435058[a-f0-9]{100,}$', re.IGNORECASE), modes=[
+        HashInfo(name='WPA-EAPOL (hashcat .hccapx file, hex-encoded)', hashcat=2500, john=None, extended=False),
+        HashInfo(name='WPA-EAPOL-PMK (hashcat .hccapx file, hex-encoded)', hashcat=2501, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^[a-f0-9]{32}:[a-f0-9]{12}:[a-f0-9]{12}:[a-f0-9]+$', re.IGNORECASE), modes=[
+        HashInfo(name='WPA-PMKID-PBKDF2 (old format; WPA*01* is current)', hashcat=16800, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^[a-f0-9]{32}:[a-f0-9]{12}:[a-f0-9]{12}$', re.IGNORECASE), modes=[
+        HashInfo(name='WPA-PMKID-PMK (old format)', hashcat=16801, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^[a-f0-9]{32}:\d{1,7}:[^:\s]+@[^:\s]+:[a-f0-9]+$', re.IGNORECASE), modes=[
+        HashInfo(name='LastPass + LastPass sniffed (with trailing field)', hashcat=6800, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^[^$:\s]{1,12}\$[A-F0-9]{16}$'), modes=[
+        HashInfo(name='SAP CODVN B (BCODE) from RFC_READ_TABLE', hashcat=7701, john=None, extended=False)]),
+    Prototype(regex=re.compile(r'^[^$:\s]{1,12}\$[A-F0-9]{40}$'), modes=[
+        HashInfo(name='SAP CODVN F/G (PASSCODE) from RFC_READ_TABLE', hashcat=7801, john=None, extended=False)]),
+    # ---- gaps found by running tools/check_against_hashcat.py on Kali (round 1) ----------
     Prototype(regex=re.compile(r'^\{PKCS5S2\}[A-Za-z0-9+/=]{60,}$'), modes=[
         HashInfo(name='Atlassian (PBKDF2-HMAC-SHA1)', hashcat=12001, john=None, extended=False)]),
     Prototype(regex=re.compile(r'^\{PBKDF2_SHA256\}[A-Za-z0-9+/=]{40,}$'), modes=[
@@ -665,7 +679,8 @@ def _load_auto_prototypes():
             rx = re.compile(_expand(rec["regex"]))
         except re.error:
             continue
-        modes = [HashInfo(name=m["name"], hashcat=m.get("hashcat"), john=m.get("john"), extended=False)
+        ext = bool(rec.get("extended", False))
+        modes = [HashInfo(name=m["name"], hashcat=m.get("hashcat"), john=m.get("john"), extended=ext)
                  for m in rec["modes"]]
         protos.append(Prototype(regex=rx, modes=modes))
     return protos

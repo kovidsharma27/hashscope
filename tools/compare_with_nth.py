@@ -39,7 +39,7 @@ def score(name, fn, examples):
 def main():
     examples = json.load(open(DATA, encoding="utf-8"))
     engine = HashID()
-    score("HashScope", lambda h: [m.hashcat for m in engine.identifyHash(h)], examples)
+    score("HashScope", lambda h: [m.hashcat for m in engine.identifyHash(h) if not m.extended], examples)  # default output only (fair vs NTH)
     try:
         from name_that_hash import runner
     except ImportError:

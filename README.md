@@ -62,8 +62,10 @@ for info in HashID().identifyHash("$argon2id$v=19$m=65536,t=3,p=4$c29tZXNhbHQ$Rd
 | | any | top 5 | top 1 |
 |---|---|---|---|
 | HashScope v0.1 (before) | 17% | 11% | 9% |
-| **HashScope v0.2** | **60%** | **49%** | **36%** |
+| **HashScope v0.2.2** (default output) | **57%** | **50%** | **36%** |
 | Name-That-Hash | 22% | 16% | 12% |
+
+`hashscope -e` additionally lists *candidate* families for bare `hex:salt` formats (shape-based guesses, e.g. every `sha1($pass.$salt)` variant). Counting those, coverage is 89% - but that number is inflated, because listing 30 candidates makes "any" easy; trust the default-output row.
 
 **Caveat:** the auto-patterns were derived from these same examples, so 60% is partly
 circular. The honest independent check is `tools/heldout_john_check.py`, which uses John the
@@ -83,7 +85,7 @@ statement about everyday CTF hashes, where all tools do well.
 ## Testing
 
 ```bash
-pytest                                  # ~1090 tests: ~785 pass, ~300 expected-fail (known gaps)
+pytest                                  # ~1090 tests (a few hundred are expected failures = known gaps)
 python3 tools/compare_with_nth.py       # accuracy table above
 ```
 

@@ -2927,5 +2927,1231 @@
     "john": null
    }
   ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{32}(?::[^\\s:]+){1}$",
+  "extended": true,
+  "example": "93a8cf6a7d43e3b5bcd2dc6abb3e02c6:27032153220030464358344758762807",
+  "modes": [
+   {
+    "name": "PostgreSQL",
+    "hashcat": 12,
+    "john": null
+   },
+   {
+    "name": "SolarWinds Serv-U",
+    "hashcat": 24,
+    "john": null
+   },
+   {
+    "name": "md5(md5($pass.$salt))",
+    "hashcat": 2630,
+    "john": null
+   },
+   {
+    "name": "md5($salt.$pass.$salt)",
+    "hashcat": 3800,
+    "john": null
+   },
+   {
+    "name": "md5(sha1($pass).$salt)",
+    "hashcat": 4410,
+    "john": null
+   },
+   {
+    "name": "md5(sha1($pass.$salt))",
+    "hashcat": 4420,
+    "john": null
+   },
+   {
+    "name": "md5(sha1($salt.$pass))",
+    "hashcat": 4430,
+    "john": null
+   },
+   {
+    "name": "IPMI2 RAKP HMAC-MD5",
+    "hashcat": 7350,
+    "john": null
+   },
+   {
+    "name": "md5(sha1($salt).md5($pass))",
+    "hashcat": 21200,
+    "john": null
+   },
+   {
+    "name": "AES-128-ECB NOKDF (PT = $salt, key = $pass)",
+    "hashcat": 26401,
+    "john": null
+   },
+   {
+    "name": "AES-192-ECB NOKDF (PT = $salt, key = $pass)",
+    "hashcat": 26402,
+    "john": null
+   },
+   {
+    "name": "AES-256-ECB NOKDF (PT = $salt, key = $pass)",
+    "hashcat": 26403,
+    "john": null
+   },
+   {
+    "name": "md5(md5($salt).md5(md5($pass)))",
+    "hashcat": 30500,
+    "john": null
+   },
+   {
+    "name": "Domain Cached Credentials (DCC), MS Cache (NT)",
+    "hashcat": 31500,
+    "john": null
+   },
+   {
+    "name": "PrestaShop",
+    "hashcat": 40026,
+    "john": null
+   },
+   {
+    "name": "md5($salt.sha1($salt.$pass))",
+    "hashcat": 40048,
+    "john": null
+   },
+   {
+    "name": "Simpla CMS - md5($salt.$pass.md5($pass))",
+    "hashcat": 40051,
+    "john": null
+   },
+   {
+    "name": "md5($salt.md5($pass).$salt)",
+    "hashcat": 40071,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{32}$",
+  "extended": true,
+  "example": "2303b15bfa48c74a74758135a0df1201",
+  "modes": [
+   {
+    "name": "md5(utf16le($pass))",
+    "hashcat": 70,
+    "john": null
+   },
+   {
+    "name": "md5(sha1($pass).md5($pass).sha1($pass))",
+    "hashcat": 20900,
+    "john": null
+   },
+   {
+    "name": "md5(sha1(md5($pass)))",
+    "hashcat": 32800,
+    "john": null
+   },
+   {
+    "name": "NTLM(NTLM_bin($pass))",
+    "hashcat": 40080,
+    "john": null
+   },
+   {
+    "name": "MD2",
+    "hashcat": 40084,
+    "john": null
+   },
+   {
+    "name": "RIPEMD-128",
+    "hashcat": 40086,
+    "john": null
+   },
+   {
+    "name": "Tiger-128",
+    "hashcat": 40090,
+    "john": null
+   },
+   {
+    "name": "Snefru-128",
+    "hashcat": 40094,
+    "john": null
+   },
+   {
+    "name": "MDC-2",
+    "hashcat": 40101,
+    "john": null
+   },
+   {
+    "name": "HAVAL-128 (3 passes)",
+    "hashcat": 40102,
+    "john": null
+   },
+   {
+    "name": "HAVAL-128 (4 passes)",
+    "hashcat": 40103,
+    "john": null
+   },
+   {
+    "name": "HAVAL-128 (5 passes)",
+    "hashcat": 40104,
+    "john": null
+   },
+   {
+    "name": "MD6-128",
+    "hashcat": 40168,
+    "john": null
+   },
+   {
+    "name": "RadioGatun[32] (first 128 bits)",
+    "hashcat": 40171,
+    "john": null
+   },
+   {
+    "name": "RIPEMD (original)",
+    "hashcat": 40173,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{50}$",
+  "extended": true,
+  "example": "83377286015bcebb857b23b94331e2b316b6ecbe9fbf26c4fc",
+  "modes": [
+   {
+    "name": "ArubaOS",
+    "hashcat": 125,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{40}$",
+  "extended": true,
+  "example": "b9798556b741befdbddcbf640d1dd59d19b1e193",
+  "modes": [
+   {
+    "name": "sha1(utf16le($pass))",
+    "hashcat": 170,
+    "john": null
+   },
+   {
+    "name": "sha1(md5(md5($pass)))",
+    "hashcat": 40039,
+    "john": null
+   },
+   {
+    "name": "SHA-0",
+    "hashcat": 40085,
+    "john": null
+   },
+   {
+    "name": "Tiger-160",
+    "hashcat": 40091,
+    "john": null
+   },
+   {
+    "name": "HAVAL-160 (3 passes)",
+    "hashcat": 40105,
+    "john": null
+   },
+   {
+    "name": "HAVAL-160 (4 passes)",
+    "hashcat": 40106,
+    "john": null
+   },
+   {
+    "name": "HAVAL-160 (5 passes)",
+    "hashcat": 40107,
+    "john": null
+   },
+   {
+    "name": "HAS-160",
+    "hashcat": 40165,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{64}$",
+  "extended": true,
+  "example": "9e9283e633f4a7a42d3abc93701155be8afe5660da24c8758e7d3533e2f2dc82",
+  "modes": [
+   {
+    "name": "sha256(utf16le($pass))",
+    "hashcat": 1470,
+    "john": null
+   },
+   {
+    "name": "GOST R 34.11-2012 (Streebog) 256-bit, big-endian",
+    "hashcat": 11700,
+    "john": null
+   },
+   {
+    "name": "sha256(md5($pass))",
+    "hashcat": 20800,
+    "john": null
+   },
+   {
+    "name": "sha256(sha256_bin($pass))",
+    "hashcat": 21400,
+    "john": null
+   },
+   {
+    "name": "ShangMi 3 (SM3)",
+    "hashcat": 31100,
+    "john": null
+   },
+   {
+    "name": "MD6 (256)",
+    "hashcat": 34600,
+    "john": null
+   },
+   {
+    "name": "RIPEMD-256",
+    "hashcat": 40087,
+    "john": null
+   },
+   {
+    "name": "GOST R 34.11-94 (CryptoPro)",
+    "hashcat": 40088,
+    "john": null
+   },
+   {
+    "name": "Snefru-256",
+    "hashcat": 40095,
+    "john": null
+   },
+   {
+    "name": "Skein-512-256",
+    "hashcat": 40097,
+    "john": null
+   },
+   {
+    "name": "PANAMA",
+    "hashcat": 40100,
+    "john": null
+   },
+   {
+    "name": "HAVAL-256 (3 passes)",
+    "hashcat": 40114,
+    "john": null
+   },
+   {
+    "name": "HAVAL-256 (4 passes)",
+    "hashcat": 40115,
+    "john": null
+   },
+   {
+    "name": "HAVAL-256 (5 passes)",
+    "hashcat": 40116,
+    "john": null
+   },
+   {
+    "name": "BLAKE-256",
+    "hashcat": 40118,
+    "john": null
+   },
+   {
+    "name": "BMW-256",
+    "hashcat": 40122,
+    "john": null
+   },
+   {
+    "name": "CubeHash-256",
+    "hashcat": 40126,
+    "john": null
+   },
+   {
+    "name": "ECHO-256",
+    "hashcat": 40130,
+    "john": null
+   },
+   {
+    "name": "Fugue-256",
+    "hashcat": 40134,
+    "john": null
+   },
+   {
+    "name": "Groestl-256",
+    "hashcat": 40138,
+    "john": null
+   },
+   {
+    "name": "Hamsi-256",
+    "hashcat": 40142,
+    "john": null
+   },
+   {
+    "name": "JH-256",
+    "hashcat": 40146,
+    "john": null
+   },
+   {
+    "name": "Luffa-256",
+    "hashcat": 40150,
+    "john": null
+   },
+   {
+    "name": "Shabal-256",
+    "hashcat": 40154,
+    "john": null
+   },
+   {
+    "name": "SHAvite-3-256",
+    "hashcat": 40158,
+    "john": null
+   },
+   {
+    "name": "SIMD-256",
+    "hashcat": 40162,
+    "john": null
+   },
+   {
+    "name": "EDON-R-256",
+    "hashcat": 40166,
+    "john": null
+   },
+   {
+    "name": "RadioGatun[64]",
+    "hashcat": 40172,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{128}$",
+  "extended": true,
+  "example": "79bba09eb9354412d0f2c037c22a777b8bf549ab12d49b77d5b25faa839e4378d8f6fa11aceb6d9413977ae5ad5d011568bad2de4f998d75fd4ce916eda83697",
+  "modes": [
+   {
+    "name": "sha512(utf16le($pass))",
+    "hashcat": 1770,
+    "john": null
+   },
+   {
+    "name": "GOST R 34.11-2012 (Streebog) 512-bit, big-endian",
+    "hashcat": 11800,
+    "john": null
+   },
+   {
+    "name": "BitShares v0.x - sha512(sha512_bin(pass))",
+    "hashcat": 21000,
+    "john": null
+   },
+   {
+    "name": "Cisco-ISE Hashed Password (SHA256)",
+    "hashcat": 40012,
+    "john": null
+   },
+   {
+    "name": "Skein-512-512",
+    "hashcat": 40099,
+    "john": null
+   },
+   {
+    "name": "BLAKE-512",
+    "hashcat": 40120,
+    "john": null
+   },
+   {
+    "name": "BMW-512",
+    "hashcat": 40124,
+    "john": null
+   },
+   {
+    "name": "CubeHash-512",
+    "hashcat": 40128,
+    "john": null
+   },
+   {
+    "name": "ECHO-512",
+    "hashcat": 40132,
+    "john": null
+   },
+   {
+    "name": "Fugue-512",
+    "hashcat": 40136,
+    "john": null
+   },
+   {
+    "name": "Groestl-512",
+    "hashcat": 40140,
+    "john": null
+   },
+   {
+    "name": "Hamsi-512",
+    "hashcat": 40144,
+    "john": null
+   },
+   {
+    "name": "JH-512",
+    "hashcat": 40148,
+    "john": null
+   },
+   {
+    "name": "Luffa-512",
+    "hashcat": 40152,
+    "john": null
+   },
+   {
+    "name": "Shabal-512",
+    "hashcat": 40156,
+    "john": null
+   },
+   {
+    "name": "SHAvite-3-512",
+    "hashcat": 40160,
+    "john": null
+   },
+   {
+    "name": "SIMD-512",
+    "hashcat": 40164,
+    "john": null
+   },
+   {
+    "name": "EDON-R-512",
+    "hashcat": 40167,
+    "john": null
+   },
+   {
+    "name": "MD6-512",
+    "hashcat": 40170,
+    "john": null
+   },
+   {
+    "name": "Whirlpool-0",
+    "hashcat": 40174,
+    "john": null
+   },
+   {
+    "name": "Whirlpool-T",
+    "hashcat": 40175,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{16}(?::[^\\s:]+){1}$",
+  "extended": true,
+  "example": "792FCB0AE31D8489:7284616727",
+  "modes": [
+   {
+    "name": "Oracle H: Type (Oracle 7+)",
+    "hashcat": 3100,
+    "john": null
+   },
+   {
+    "name": "DES (PT = $salt, key = $pass)",
+    "hashcat": 14000,
+    "john": null
+   },
+   {
+    "name": "3DES (PT = $salt, key = $pass)",
+    "hashcat": 14100,
+    "john": null
+   },
+   {
+    "name": "3DES (2 key, PT = $salt, key = $pass)",
+    "hashcat": 14300,
+    "john": null
+   },
+   {
+    "name": "CRC64Jones",
+    "hashcat": 28000,
+    "john": null
+   },
+   {
+    "name": "MurmurHash64A",
+    "hashcat": 34200,
+    "john": null
+   },
+   {
+    "name": "xxHash64",
+    "hashcat": 39500,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{32}(?::[^\\s:]+){2}$",
+  "extended": true,
+  "example": "0e1484eb061b8e9cfd81868bba1dc4a0:229381927:182719643",
+  "modes": [
+   {
+    "name": "md5($salt1.strtoupper(md5($salt2.$pass)))",
+    "hashcat": 3730,
+    "john": null
+   },
+   {
+    "name": "iSCSI CHAP authentication, MD5(CHAP)",
+    "hashcat": 4800,
+    "john": null
+   },
+   {
+    "name": "md5($salt1.sha1($salt2.$pass))",
+    "hashcat": 21310,
+    "john": null
+   },
+   {
+    "name": "md5(md5(md5($pass.$salt1)).$salt2)",
+    "hashcat": 21900,
+    "john": null
+   },
+   {
+    "name": "md5(md5(md5($pass).$salt1).$salt2)",
+    "hashcat": 31700,
+    "john": null
+   },
+   {
+    "name": "Empire CMS (Admin password)",
+    "hashcat": 32300,
+    "john": null
+   },
+   {
+    "name": "md5($salt1.$pass.$salt2)",
+    "hashcat": 33000,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{40}(?::[^\\s:]+){1}$",
+  "extended": true,
+  "example": "9138d472fce6fe50e2a32da4eec4ecdc8860f4d5:hashcat1",
+  "modes": [
+   {
+    "name": "sha1(sha1($pass).$salt)",
+    "hashcat": 4510,
+    "john": null
+   },
+   {
+    "name": "sha1($salt.sha1($pass))",
+    "hashcat": 4520,
+    "john": null
+   },
+   {
+    "name": "Redmine",
+    "hashcat": 4521,
+    "john": null
+   },
+   {
+    "name": "PunBB",
+    "hashcat": 4522,
+    "john": null
+   },
+   {
+    "name": "Huawei sha1(md5($pass).$salt)",
+    "hashcat": 4711,
+    "john": null
+   },
+   {
+    "name": "sha1($salt.$pass.$salt)",
+    "hashcat": 4900,
+    "john": null
+   },
+   {
+    "name": "sha1(sha1($salt.$pass.$salt))",
+    "hashcat": 5000,
+    "john": null
+   },
+   {
+    "name": "PeopleSoft PS_TOKEN",
+    "hashcat": 13500,
+    "john": null
+   },
+   {
+    "name": "OpenCart",
+    "hashcat": 13900,
+    "john": null
+   },
+   {
+    "name": "sha1(CX)",
+    "hashcat": 14400,
+    "john": null
+   },
+   {
+    "name": "sha1(md5($pass.$salt))",
+    "hashcat": 21100,
+    "john": null
+   },
+   {
+    "name": "sha1($salt.sha1($pass.$salt))",
+    "hashcat": 24300,
+    "john": null
+   },
+   {
+    "name": "Ruby on Rails Restful Auth (one round, no sitekey)",
+    "hashcat": 27200,
+    "john": null
+   },
+   {
+    "name": "HMAC-RIPEMD160 (key = $pass)",
+    "hashcat": 40013,
+    "john": null
+   },
+   {
+    "name": "HMAC-RIPEMD160 (key = $salt)",
+    "hashcat": 40014,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{316}(?::[^\\s:]+){1}$",
+  "extended": true,
+  "example": "3437343735333336383831353232323433383333303236303337333338363232303135383237333638363532373231343030313131333838323734373138363632343133333335353030353633373533333133313530363533303738343334313330303630343633333237373037383537333630303233303830303437323838333237313438363238343434383831363634323431333430383735323038:f4b376e25868751fc0264f573ff1fe50b65ce5a2",
+  "modes": [
+   {
+    "name": "IPMI2 RAKP HMAC-SHA1",
+    "hashcat": 7300,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{336}$",
+  "extended": true,
+  "example": "0a3f352686e5eb5be173e668a4fff5cd5df420927e1da2d5d4052340160637e3e6a5a92841a188ed240e13b919f3d91694bd4c0acba79271e9c08a83ea5ad387cbb74d5884066a1cb5a8caa80d847079168f84823847c631dbe3a834f1bc496acfebac3bff1608bf1c857717f8f428e07b5e2cb12aaeddfa83d7dcb6d840234d08b84f8ca6c6e562af73eea13148f7902bcaf0220d3e36eeeff1d37283dc421483a2791182614ebb",
+  "modes": [
+   {
+    "name": "Password Safe v2",
+    "hashcat": 9000,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{96}(?::[^\\s:]+){1}$",
+  "extended": true,
+  "example": "ca1c843a7a336234baf9db2e10bc38824ce523402fbd7741286b1602bdf6cb869a45289bb9fb706bd404b9f3842ff729:2746460797049820734631508",
+  "modes": [
+   {
+    "name": "sha384($pass.$salt)",
+    "hashcat": 10810,
+    "john": null
+   },
+   {
+    "name": "sha384($salt.$pass)",
+    "hashcat": 10820,
+    "john": null
+   },
+   {
+    "name": "sha384(utf16le($pass).$salt)",
+    "hashcat": 10830,
+    "john": null
+   },
+   {
+    "name": "sha384($salt.utf16le($pass))",
+    "hashcat": 10840,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{96}$",
+  "extended": true,
+  "example": "48e61d68e93027fae35d405ed16cd01b6f1ae66267833b4a7aa1759e45bab9bba652da2e4c07c155a3d8cf1d81f3a7e8",
+  "modes": [
+   {
+    "name": "sha384(utf16le($pass))",
+    "hashcat": 10870,
+    "john": null
+   },
+   {
+    "name": "Skein-512-384",
+    "hashcat": 40098,
+    "john": null
+   },
+   {
+    "name": "BLAKE-384",
+    "hashcat": 40119,
+    "john": null
+   },
+   {
+    "name": "BMW-384",
+    "hashcat": 40123,
+    "john": null
+   },
+   {
+    "name": "CubeHash-384",
+    "hashcat": 40127,
+    "john": null
+   },
+   {
+    "name": "ECHO-384",
+    "hashcat": 40131,
+    "john": null
+   },
+   {
+    "name": "Fugue-384",
+    "hashcat": 40135,
+    "john": null
+   },
+   {
+    "name": "Groestl-384",
+    "hashcat": 40139,
+    "john": null
+   },
+   {
+    "name": "Hamsi-384",
+    "hashcat": 40143,
+    "john": null
+   },
+   {
+    "name": "JH-384",
+    "hashcat": 40147,
+    "john": null
+   },
+   {
+    "name": "Luffa-384",
+    "hashcat": 40151,
+    "john": null
+   },
+   {
+    "name": "Shabal-384",
+    "hashcat": 40155,
+    "john": null
+   },
+   {
+    "name": "SHAvite-3-384",
+    "hashcat": 40159,
+    "john": null
+   },
+   {
+    "name": "SIMD-384",
+    "hashcat": 40163,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{8}(?::[^\\s:]+){1}$",
+  "extended": true,
+  "example": "c762de4a:00000000",
+  "modes": [
+   {
+    "name": "CRC32",
+    "hashcat": 11500,
+    "john": null
+   },
+   {
+    "name": "Skip32 (PT = $salt, key = $pass)",
+    "hashcat": 14900,
+    "john": null
+   },
+   {
+    "name": "MurmurHash",
+    "hashcat": 25700,
+    "john": null
+   },
+   {
+    "name": "MurmurHash3",
+    "hashcat": 27800,
+    "john": null
+   },
+   {
+    "name": "CRC32C",
+    "hashcat": 27900,
+    "john": null
+   },
+   {
+    "name": "xxHash32",
+    "hashcat": 39600,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{64}(?::[^\\s:]+){1}$",
+  "extended": true,
+  "example": "3f3473a071b1fb955544e80c81853ca0f1e4f9ee4ca3bf4d2a8a10b5ef5be1f6:6058321484538505215534207835727413038041028036676832416353152201",
+  "modes": [
+   {
+    "name": "ColdFusion 10+",
+    "hashcat": 12600,
+    "john": null
+   },
+   {
+    "name": "Windows Phone 8+ PIN/password",
+    "hashcat": 13800,
+    "john": null
+   },
+   {
+    "name": "sha256(sha256($pass).$salt)",
+    "hashcat": 20710,
+    "john": null
+   },
+   {
+    "name": "RSA Security Analytics / NetWitness (sha256)",
+    "hashcat": 20712,
+    "john": null
+   },
+   {
+    "name": "sha256($salt.$pass.$salt)",
+    "hashcat": 22300,
+    "john": null
+   },
+   {
+    "name": "Symfony Legacy SHA256",
+    "hashcat": 35800,
+    "john": null
+   },
+   {
+    "name": "HMAC-Streebog-256 (key = $pass), big-endian",
+    "hashcat": 40027,
+    "john": null
+   },
+   {
+    "name": "HMAC-Streebog-256 (key = $salt), big-endian",
+    "hashcat": 40028,
+    "john": null
+   },
+   {
+    "name": "sha256($salt.sha256($pass))",
+    "hashcat": 40046,
+    "john": null
+   },
+   {
+    "name": "sha256(sha256($pass.$salt))",
+    "hashcat": 40047,
+    "john": null
+   },
+   {
+    "name": "sha256($salt.sha256_bin($pass))",
+    "hashcat": 40049,
+    "john": null
+   },
+   {
+    "name": "HMAC-BLAKE2S (key = $pass)",
+    "hashcat": 40072,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{160}$",
+  "extended": true,
+  "example": "15738301074686823451275227041071157383010746868234512752270410712bc4be900bf96ccf43c9852fff49b5f5874a9f6e7bf301686fa6d98286de151f15738301074686823451275227041071",
+  "modes": [
+   {
+    "name": "Android FDE (Samsung DEK)",
+    "hashcat": 12900,
+    "john": null
+   },
+   {
+    "name": "Oracle T: Type (Oracle 12+)",
+    "hashcat": 40036,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{128}(?::[^\\s:]+){1}$",
+  "extended": true,
+  "example": "bfa9fe5a404faff8b0d200385e26b783a163e475869336029d3ebaccaf02b5f16e4949279e8a33b942ab647f8f19a83dbe89a6d39dd6d8f84812de7d2e556767:6422386434050716105781561510557063652302782465168686858312232148",
+  "modes": [
+   {
+    "name": "FileZilla Server >= 0.9.55",
+    "hashcat": 15000,
+    "john": null
+   },
+   {
+    "name": "HMAC-Streebog-512 (key = $pass), big-endian",
+    "hashcat": 40029,
+    "john": null
+   },
+   {
+    "name": "HMAC-Streebog-512 (key = $salt), big-endian",
+    "hashcat": 40030,
+    "john": null
+   },
+   {
+    "name": "sha512(sha512($pass).$salt)",
+    "hashcat": 40067,
+    "john": null
+   },
+   {
+    "name": "sha512(sha512_bin($pass).$salt)",
+    "hashcat": 40068,
+    "john": null
+   },
+   {
+    "name": "CubeCart (whirlpool($salt.$pass.$salt))",
+    "hashcat": 40069,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{40}(?::[^\\s:]+){2}$",
+  "extended": true,
+  "example": "630d2e918ab98e5fad9c61c0e4697654c4c16d73:18463812876898603420835420139870031762867:4449516425193605979760642927684590668549584534278112685644182848763890902699756869283142014018311837025441092624864168514500447147373198033271040848851687108629922695275682773136540885737874252666804716579965812709728589952868736177317883550827482248620334",
+  "modes": [
+   {
+    "name": "sha1($salt1.$pass.$salt2)",
+    "hashcat": 19300,
+    "john": null
+   },
+   {
+    "name": "Ruby on Rails Restful-Authentication",
+    "hashcat": 19500,
+    "john": null
+   },
+   {
+    "name": "sha1($salt.sha1(utf16le($username).':'.utf16le($pass)))",
+    "hashcat": 29000,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{24}$",
+  "extended": true,
+  "example": "f1eff5c0368d10311dcfc419",
+  "modes": [
+   {
+    "name": "PKZIP Master Key",
+    "hashcat": 20500,
+    "john": null
+   },
+   {
+    "name": "PKZIP Master Key (6 byte optimization)",
+    "hashcat": 20510,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{137}$",
+  "extended": true,
+  "example": "2f9282ade42ce148175dc3b4d8b5916dae5211eee49886c3f7cc768f6b9f2eb982a5ac2f2672a0223999bfd15349093278adf12f6276e8b61dacf5572b3f93d0b4fa886ce",
+  "modes": [
+   {
+    "name": "Citrix NetScaler (SHA512)",
+    "hashcat": 22200,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{56}$",
+  "extended": true,
+  "example": "127e6fbfe24a750e72930c220a8e138275656b8e5d8f48a98c3c92df",
+  "modes": [
+   {
+    "name": "DANE RFC7929/RFC8162 SHA2-256",
+    "hashcat": 30420,
+    "john": null
+   },
+   {
+    "name": "sha224(sha224($pass))",
+    "hashcat": 40076,
+    "john": null
+   },
+   {
+    "name": "sha224(sha1($pass))",
+    "hashcat": 40077,
+    "john": null
+   },
+   {
+    "name": "Skein-512-224",
+    "hashcat": 40096,
+    "john": null
+   },
+   {
+    "name": "HAVAL-224 (3 passes)",
+    "hashcat": 40111,
+    "john": null
+   },
+   {
+    "name": "HAVAL-224 (4 passes)",
+    "hashcat": 40112,
+    "john": null
+   },
+   {
+    "name": "HAVAL-224 (5 passes)",
+    "hashcat": 40113,
+    "john": null
+   },
+   {
+    "name": "BLAKE-224",
+    "hashcat": 40117,
+    "john": null
+   },
+   {
+    "name": "BMW-224",
+    "hashcat": 40121,
+    "john": null
+   },
+   {
+    "name": "CubeHash-224",
+    "hashcat": 40125,
+    "john": null
+   },
+   {
+    "name": "ECHO-224",
+    "hashcat": 40129,
+    "john": null
+   },
+   {
+    "name": "Fugue-224",
+    "hashcat": 40133,
+    "john": null
+   },
+   {
+    "name": "Groestl-224",
+    "hashcat": 40137,
+    "john": null
+   },
+   {
+    "name": "Hamsi-224",
+    "hashcat": 40141,
+    "john": null
+   },
+   {
+    "name": "JH-224",
+    "hashcat": 40145,
+    "john": null
+   },
+   {
+    "name": "Luffa-224",
+    "hashcat": 40149,
+    "john": null
+   },
+   {
+    "name": "Shabal-224",
+    "hashcat": 40153,
+    "john": null
+   },
+   {
+    "name": "SHAvite-3-224",
+    "hashcat": 40157,
+    "john": null
+   },
+   {
+    "name": "SIMD-224",
+    "hashcat": 40161,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{80}$",
+  "extended": true,
+  "example": "8339009b816d4e4c2a6be3c6e1daac6aca69a7670ecdc583adfca0db17cc8f08ce35d6c759b038ab",
+  "modes": [
+   {
+    "name": "RIPEMD-320",
+    "hashcat": 33600,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{16}$",
+  "extended": true,
+  "example": "73f8142b4326d36a",
+  "modes": [
+   {
+    "name": "MurmurHash64A (zero seed)",
+    "hashcat": 34201,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{128}(?::[^\\s:]+){8}$",
+  "extended": true,
+  "example": "101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f:808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebf:0011223344556677:8899aabbccddeeff:404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f70717273:01000000c0000201:a0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebf:c0c1c2c3c4c5c6c7c8c9cacbcccdcecf:8673eea20ce3f1b51bd45531bfb62f83079717d6a3afb4543b8d6ad378eae10d",
+  "modes": [
+   {
+    "name": "IKE-PSK SHA256",
+    "hashcat": 38100,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{56}(?::[^\\s:]+){1}$",
+  "extended": true,
+  "example": "0cf361904f4b0234cf4ade8496d8c11c04e5982db967603e82f22b2f:89452466460220844541730694146873525188525677",
+  "modes": [
+   {
+    "name": "sha224($pass.$salt)",
+    "hashcat": 40009,
+    "john": null
+   },
+   {
+    "name": "sha224($salt.$pass)",
+    "hashcat": 40010,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{80}(?::[^\\s:]+){1}$",
+  "extended": true,
+  "example": "e740440e7bd65056a90f1aa4eb00e00308a9f1788866b4eacbd46cfc8032301d4e5b3a9d179be044:95454599772294521162217",
+  "modes": [
+   {
+    "name": "HMAC-RIPEMD320 (key = $pass)",
+    "hashcat": 40073,
+    "john": null
+   },
+   {
+    "name": "HMAC-RIPEMD320 (key = $salt)",
+    "hashcat": 40074,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{129}$",
+  "extended": true,
+  "example": "5567243c55099b6b10a714a350db53beea8be6ac9c247fd40fea7e96d206a9f11fd1c45735556ac2004138640de206d0e1522607ab3c3f92816156d2d7845068e",
+  "modes": [
+   {
+    "name": "Citrix NetScaler (PBKDF2-HMAC-SHA256)",
+    "hashcat": 40075,
+    "john": null
+   }
+  ]
+ },
+ {
+  "regex": "^[0-9a-fA-F]{48}$",
+  "extended": true,
+  "example": "6e2d24e09a70a02bdd9c4885ea199b064982130432331b44",
+  "modes": [
+   {
+    "name": "Tiger",
+    "hashcat": 40089,
+    "john": null
+   },
+   {
+    "name": "Tiger2",
+    "hashcat": 40092,
+    "john": null
+   },
+   {
+    "name": "TTH (Tiger Tree Hash, single leaf)",
+    "hashcat": 40093,
+    "john": null
+   },
+   {
+    "name": "HAVAL-192 (3 passes)",
+    "hashcat": 40108,
+    "john": null
+   },
+   {
+    "name": "HAVAL-192 (4 passes)",
+    "hashcat": 40109,
+    "john": null
+   },
+   {
+    "name": "HAVAL-192 (5 passes)",
+    "hashcat": 40110,
+    "john": null
+   },
+   {
+    "name": "Tiger-192,4",
+    "hashcat": 40176,
+    "john": null
+   }
+  ]
  }
 ]

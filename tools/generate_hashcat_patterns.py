@@ -121,13 +121,29 @@ def main():
         g = groups.setdefault(rx, {"regex": rx, "example": h, "modes": []})
         g["modes"].append({"name": ex["name"], "hashcat": ex["mode"], "john": None})
 
+    # ---- families: bare hex / hex:salt formats have no marker, so group them by SHAPE ----
+    # e.g. "40 hex chars + 1 ':' field" is shared by dozens of sha1($pass.$salt)-style modes.
+    # These are CANDIDATES only, so they are flagged extended (shown with `hashscope -e`).
+    families = {}
+    for ex in skipped_nomarker:
+        m = re.fullmatch(r"([0-9a-fA-F]{8,512})((?::[^\s:]+)*)", ex["hash"])
+        if not m:
+            continue
+        n, k = len(m.group(1)), m.group(2).count(":")
+        if n < 16 and k == 0:
+            continue  # too short to say anything useful
+        rx = "^[0-9a-fA-F]{%d}$" % n if k == 0 else "^[0-9a-fA-F]{%d}(?::[^\\s:]+){%d}$" % (n, k)
+        fam = families.setdefault(rx, {"regex": rx, "extended": True, "example": ex["hash"], "modes": []})
+        fam["modes"].append({"name": ex["name"], "hashcat": ex["mode"], "john": None})
     data = sorted(groups.values(), key=lambda g: g["modes"][0]["hashcat"])
+    data += sorted(families.values(), key=lambda g: g["modes"][0]["hashcat"])
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=1, ensure_ascii=False)
-    n_modes = sum(len(g["modes"]) for g in data)
+    n_modes = sum(len(g["modes"]) for g in data)  # includes family modes
     print(f"Wrote {len(data)} auto patterns covering {n_modes} hashcat modes -> {os.path.normpath(OUT)}")
-    print(f"Skipped {len(skipped_nomarker)} examples with no literal marker (left to length-based patterns)")
+    print(f"{len(families)} shape families (extended candidates) cover "
+          f"{sum(len(f['modes']) for f in families.values())} markerless modes")
     json.dump(skipped_nomarker, open("/tmp/skipped.json", "w"), indent=1)
 
 
