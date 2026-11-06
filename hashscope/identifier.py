@@ -99,7 +99,7 @@ newer_prototypes = [
     Prototype(regex=re.compile(r'^\$7z\$.+$'), modes=[
         HashInfo(name='7-Zip', hashcat=11600, john='7z', extended=False)]),
     Prototype(regex=re.compile(r'^\$RAR3\$\*.+$'), modes=[
-        HashInfo(name='RAR3-hp', hashcat=12500, john='rar3', extended=False)]),
+        HashInfo(name='RAR3-hp', hashcat=12500, john='rar', extended=False)]),
     Prototype(regex=re.compile(r'^\$rar5\$.+$'), modes=[
         HashInfo(name='RAR5', hashcat=13000, john='rar5', extended=False)]),
     Prototype(regex=re.compile(r'^\$zip2\$.*\$/zip2\$$'), modes=[
@@ -209,8 +209,8 @@ legacy_prototypes = [
     Prototype(regex=re.compile(r'^([^\\\/:*?"<>|]{1,20}:)?(\$DCC2\$10240#[^\\\/:*?"<>|]{1,20}#)?[a-f0-9]{32}$', re.IGNORECASE), modes=[
         HashInfo(name='Domain Cached Credentials 2', hashcat=2100, john='mscash2', extended=False)]),
     Prototype(regex=re.compile(r'^{SHA}[a-z0-9\/+]{27}=$', re.IGNORECASE), modes=[
-        HashInfo(name='SHA-1(Base64)', hashcat=101, john='nsldap', extended=False),
-        HashInfo(name='Netscape LDAP SHA', hashcat=101, john='nsldap', extended=False)]),
+        HashInfo(name='SHA-1(Base64)', hashcat=101, john=None, extended=False),
+        HashInfo(name='Netscape LDAP SHA', hashcat=101, john=None, extended=False)]),
     Prototype(regex=re.compile(r'^\$1\$[a-z0-9\/.]{0,8}\$[a-z0-9\/.]{22}(:.*)?$', re.IGNORECASE), modes=[
         HashInfo(name='MD5 Crypt', hashcat=500, john='md5crypt', extended=False),
         HashInfo(name='Cisco-IOS(MD5)', hashcat=500, john='md5crypt', extended=False),
@@ -233,7 +233,7 @@ legacy_prototypes = [
         HashInfo(name='Apache MD5', hashcat=1600, john=None, extended=False),
         HashInfo(name='md5apr1', hashcat=1600, john=None, extended=True)]),
     Prototype(regex=re.compile(r'^{smd5}[a-z0-9$\/.]{31}$', re.IGNORECASE), modes=[
-        HashInfo(name='AIX(smd5)', hashcat=6300, john='aix-smd5', extended=False)]),
+        HashInfo(name='AIX(smd5)', hashcat=6300, john=None, extended=False)]),
     Prototype(regex=re.compile(r'^[a-f0-9]{32}:[a-f0-9]{32}$', re.IGNORECASE), modes=[
         HashInfo(name='WebEdition CMS', hashcat=3721, john=None, extended=False)]),
     Prototype(regex=re.compile(r'^[a-f0-9]{32}:.{5}$', re.IGNORECASE), modes=[
@@ -268,9 +268,9 @@ legacy_prototypes = [
     Prototype(regex=re.compile(r'^[a-z0-9]{43}$', re.IGNORECASE), modes=[
         HashInfo(name='Cisco-IOS(SHA-256)', hashcat=5700, john=None, extended=False)]),
     Prototype(regex=re.compile(r'^{SSHA}[a-z0-9\/+]{38}==$', re.IGNORECASE), modes=[
-        HashInfo(name='SSHA-1(Base64)', hashcat=111, john='nsldaps', extended=False),
-        HashInfo(name='Netscape LDAP SSHA', hashcat=111, john='nsldaps', extended=False),
-        HashInfo(name='nsldaps', hashcat=111, john='nsldaps', extended=True)]),
+        HashInfo(name='SSHA-1(Base64)', hashcat=111, john=None, extended=False),
+        HashInfo(name='Netscape LDAP SSHA', hashcat=111, john=None, extended=False),
+        HashInfo(name='nsldaps', hashcat=111, john=None, extended=True)]),
     Prototype(regex=re.compile(r'^[a-z0-9=]{47}$', re.IGNORECASE), modes=[
         HashInfo(name='Fortigate(FortiOS)', hashcat=7000, john='fortigate', extended=False)]),
     Prototype(regex=re.compile(r'^[a-f0-9]{48}$', re.IGNORECASE), modes=[
@@ -496,9 +496,9 @@ legacy_prototypes = [
     Prototype(regex=re.compile(r'^SCRYPT:[0-9]{1,}:[0-9]{1}:[0-9]{1}:[a-z0-9:\/+=]{1,}$', re.IGNORECASE), modes=[
         HashInfo(name='scrypt', hashcat=8900, john=None, extended=False)]),
     Prototype(regex=re.compile(r'^\$8\$[a-z0-9\/.]{14}\$[a-z0-9\/.]{43}$', re.IGNORECASE), modes=[
-        HashInfo(name='Cisco Type 8', hashcat=9200, john='cisco8', extended=False)]),
+        HashInfo(name='Cisco Type 8', hashcat=9200, john=None, extended=False)]),
     Prototype(regex=re.compile(r'^\$9\$[a-z0-9\/.]{14}\$[a-z0-9\/.]{43}$', re.IGNORECASE), modes=[
-        HashInfo(name='Cisco Type 9', hashcat=9300, john='cisco9', extended=False)]),
+        HashInfo(name='Cisco Type 9', hashcat=9300, john=None, extended=False)]),
     Prototype(regex=re.compile(r'^\$office\$\*2007\*[0-9]{2}\*[0-9]{3}\*[0-9]{2}\*[a-z0-9]{32}\*[a-z0-9]{32}\*[a-z0-9]{40}$', re.IGNORECASE), modes=[
         HashInfo(name='Microsoft Office 2007', hashcat=9400, john='office', extended=False)]),
     Prototype(regex=re.compile(r'^\$office\$\*2010\*[0-9]{6}\*[0-9]{3}\*[0-9]{2}\*[a-z0-9]{32}\*[a-z0-9]{32}\*[a-z0-9]{64}$', re.IGNORECASE), modes=[
@@ -526,9 +526,9 @@ legacy_prototypes = [
     Prototype(regex=re.compile(r'^[a-f0-9]{4,}$', re.IGNORECASE), modes=[
         HashInfo(name='Cisco Type 7', hashcat=None, john=None, extended=True)]),
     Prototype(regex=re.compile(r'^[a-z0-9\/.]{13,}$', re.IGNORECASE), modes=[
-        HashInfo(name='BigCrypt', hashcat=None, john='bigcrypt', extended=True)]),
+        HashInfo(name='BigCrypt', hashcat=None, john=None, extended=True)]),
     Prototype(regex=re.compile(r'^(\$cisco4\$)?[a-z0-9\/.]{43}$', re.IGNORECASE), modes=[
-        HashInfo(name='Cisco Type 4', hashcat=None, john='cisco4', extended=False)]),
+        HashInfo(name='Cisco Type 4', hashcat=None, john=None, extended=False)]),
     # FIXED: [axy] -> [abxy]
     Prototype(regex=re.compile(r'^bcrypt_sha256\$\$(2[abxy]|2)\$[0-9]+\$[a-z0-9\/.]{53}$', re.IGNORECASE), modes=[
         HashInfo(name='Django(bcrypt-SHA256)', hashcat=None, john=None, extended=False)]),
@@ -582,7 +582,7 @@ curated_prototypes = [
         HashInfo(name='LastPass + LastPass sniffed', hashcat=6800, john=None, extended=False)]),
     # LDAP salted SHA-1 with any salt length (OpenLDAP default is {SSHA})
     Prototype(regex=re.compile(r'^\{SSHA\}[A-Za-z0-9+/]{27,}={0,2}$'), modes=[
-        HashInfo(name='LDAP {SSHA} (salted SHA-1, base64)', hashcat=111, john='nsldaps', extended=False)]),
+        HashInfo(name='LDAP {SSHA} (salted SHA-1, base64)', hashcat=111, john=None, extended=False)]),
     Prototype(regex=re.compile(r'^\{SSHA256\}[A-Za-z0-9+/]{43,}={0,2}$'), modes=[
         HashInfo(name='LDAP {SSHA256} (salted SHA-256, base64)', hashcat=1411, john=None, extended=False)]),
     Prototype(regex=re.compile(r'^\{SSHA512\}[A-Za-z0-9+/]{86,}={0,2}$'), modes=[
