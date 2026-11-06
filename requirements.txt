@@ -1,0 +1,5 @@
+# Runtime: none (pure standard library)
+# Development / testing:
+pytest
+exrex            # only for generate_examples.py
+name-that-hash   # only for tools/compare_with_nth.py

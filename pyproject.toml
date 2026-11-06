@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hashscope"
+version = "0.2.0"
+description = "Hash identifier with popularity ranking, modern hashes (bcrypt $2b$, Argon2, yescrypt) and hashcat-derived patterns"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "GPL-3.0-or-later" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest", "exrex", "name-that-hash"]
+
+[project.scripts]
+hashscope = "hashscope.identifier:main"
+
+[tool.setuptools]
+packages = ["hashscope"]
+
+[tool.setuptools.package-data]
+hashscope = ["data/*.json"]
